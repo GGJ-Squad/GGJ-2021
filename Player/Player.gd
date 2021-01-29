@@ -25,3 +25,6 @@ func movement(delta):
 	dir = dir.normalized()
 	
 	move_and_slide(dir * speed, Vector2.UP)
+	
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()
