@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player_Temp.png" type="Texture" id=2]
+
+[node name="Player Testing" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+[node name="Player_Temp" type="Sprite" parent="."]
+position = Vector2( 42.2085, -16.9396 )
+texture = ExtResource( 2 )
