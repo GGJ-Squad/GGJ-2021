@@ -15,7 +15,7 @@ func _process(delta):
 	movement(delta)
 
 func movement(delta):
-	var mouse_pos = get_parent().get_local_mouse_position()
+	var mouse_pos = get_local_mouse_position()
 	
 	if mouse_pos.x < 0:
 		side = "left"
