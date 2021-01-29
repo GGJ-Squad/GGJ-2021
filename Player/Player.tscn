@@ -9,7 +9,7 @@
 extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1.55072, 4.54367 )
+extents = Vector2( 4.08421, 4.54367 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Players",
@@ -28,7 +28,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sword" type="Area2D" parent="."]
-position = Vector2( 8, 0 )
+position = Vector2( 9, 0 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Sword"]
@@ -36,5 +36,7 @@ position = Vector2( 2.3007, 0 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
-position = Vector2( 1.7818, -0.473288 )
+position = Vector2( 4, -0.5 )
 shape = SubResource( 2 )
+[connection signal="body_entered" from="Sword" to="Sword" method="_on_Sword_body_entered"]
+[connection signal="body_exited" from="Sword" to="Sword" method="_on_Sword_body_exited"]

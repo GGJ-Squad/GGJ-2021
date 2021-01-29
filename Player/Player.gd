@@ -4,6 +4,8 @@ var speed = 100
 
 var weapon = "sword"
 
+var side = "right"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,6 +15,13 @@ func _process(delta):
 	movement(delta)
 
 func movement(delta):
+	var mouse_pos = get_parent().get_local_mouse_position()
+	
+	if mouse_pos.x < 0:
+		side = "left"
+	else:
+		side = "right"
+	
 	var dir : Vector2 = Vector2()
 	
 	if Input.is_action_pressed("Up"):
