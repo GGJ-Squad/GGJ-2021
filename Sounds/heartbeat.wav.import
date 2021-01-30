@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/uiHover.wav-c7330614b6d12326abf98b1f5cf9d8dc.sample"
+path="res://.import/heartbeat.wav-dde3391985650a8b3663ad08302d124c.sample"
 
 [deps]
 
-source_file="res://Sounds/uiHover.wav"
-dest_files=[ "res://.import/uiHover.wav-c7330614b6d12326abf98b1f5cf9d8dc.sample" ]
+source_file="res://Sounds/heartbeat.wav"
+dest_files=[ "res://.import/heartbeat.wav-dde3391985650a8b3663ad08302d124c.sample" ]
 
 [params]
 

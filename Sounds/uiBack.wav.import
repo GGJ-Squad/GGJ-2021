@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/uiBack.wav-c768ec4838bfd1ba04d00c6306c92e9f.sample"
+path="res://.import/uiBack.wav-e509396ceaf678e12c437a18acae1fea.sample"
 
 [deps]
 
-source_file="res://uiBack.wav"
-dest_files=[ "res://.import/uiBack.wav-c768ec4838bfd1ba04d00c6306c92e9f.sample" ]
+source_file="res://Sounds/uiBack.wav"
+dest_files=[ "res://.import/uiBack.wav-e509396ceaf678e12c437a18acae1fea.sample" ]
 
 [params]
 
