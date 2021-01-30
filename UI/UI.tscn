@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/Heart_4.png" type="Texture" id=1]
 [ext_resource path="res://UI/Heart_3.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://UI/Heart_Controller.gd" type="Script" id=7]
 [ext_resource path="res://UI/UI_Left_Mouse_Icon.png" type="Texture" id=8]
 [ext_resource path="res://UI/UI_Weapon_BG.png" type="Texture" id=9]
+[ext_resource path="res://UI/UI_Heart_Overlay.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -55,7 +56,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Weapon" type="Node2D" parent="."]
+position = Vector2( 100, 175 )
+scale = Vector2( 4, 4 )
+
+[node name="Weapon_BG" type="Sprite" parent="Weapon"]
+texture = ExtResource( 9 )
+
+[node name="Mouse_Icon" type="Sprite" parent="Weapon"]
+texture = ExtResource( 8 )
+
 [node name="Heart_Controller" type="Node2D" parent="."]
+position = Vector2( 0.749146, -0.499451 )
 script = ExtResource( 7 )
 
 [node name="Heart0" type="AnimatedSprite" parent="Heart_Controller"]
@@ -63,8 +75,6 @@ position = Vector2( 60, 60 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 frame = 4
-
-[node name="Heart0_Overlay" type="Sprite" parent="Heart_Controller"]
 
 [node name="Heart1" type="AnimatedSprite" parent="Heart_Controller"]
 position = Vector2( 140, 60 )
@@ -84,6 +94,29 @@ scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 frame = 4
 
+[node name="Heart_Overlay" type="Node2D" parent="Heart_Controller"]
+modulate = Color( 1, 0, 0, 0 )
+
+[node name="Heart0_Overlay" type="Sprite" parent="Heart_Controller/Heart_Overlay"]
+position = Vector2( 62, 60 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
+[node name="Heart1_Overlay" type="Sprite" parent="Heart_Controller/Heart_Overlay"]
+position = Vector2( 142, 60 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
+[node name="Heart2_Overlay" type="Sprite" parent="Heart_Controller/Heart_Overlay"]
+position = Vector2( 222, 60 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
+[node name="Heart3_Overlay" type="Sprite" parent="Heart_Controller/Heart_Overlay"]
+position = Vector2( 302, 60 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
 [node name="Heart_Shards" type="Particles2D" parent="Heart_Controller"]
 material = SubResource( 5 )
 position = Vector2( 302.52, 57.9001 )
@@ -98,12 +131,4 @@ local_coords = false
 process_material = SubResource( 4 )
 texture = ExtResource( 6 )
 
-[node name="Weapon" type="Node2D" parent="."]
-position = Vector2( 100, 175 )
-scale = Vector2( 4, 4 )
-
-[node name="Weapon_BG" type="Sprite" parent="Weapon"]
-texture = ExtResource( 9 )
-
-[node name="Mouse_Icon" type="Sprite" parent="Weapon"]
-texture = ExtResource( 8 )
+[node name="Tween" type="Tween" parent="Heart_Controller"]
