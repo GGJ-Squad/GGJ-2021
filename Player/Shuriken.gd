@@ -23,11 +23,13 @@ func _input(event):
 	if active:
 		if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and \
 		 event.pressed == true and cooldown == 0:
-			cooldown = 0.2
-			
-			var inst = load("Player/ShurikenThrown.tscn").instance()
-			var mouse_pos = get_parent().get_local_mouse_position()
-			
-			inst.vel = mouse_pos.normalized() * 30
-			
-			get_parent().add_child(inst)
+			if get_parent().get_parent() != null:
+				cooldown = 0.1
+				
+				var inst = load("Player/Shuriken.tscn").instance()
+				var mouse_pos = get_parent().get_local_mouse_position()
+				
+				inst.vel = mouse_pos.normalized() * 80
+				inst.position += mouse_pos.normalized() * 10 + get_parent().position
+				
+				get_parent().get_parent().add_child(inst)
