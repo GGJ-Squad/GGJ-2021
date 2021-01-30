@@ -6,7 +6,7 @@ var state = "Idle"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.animation = "Idle"
-	pass # Replace with function body.
+	pass
 
 func change_state(state, flipped):
 	self.state = state
@@ -18,3 +18,8 @@ func make_attack(weapon, flipped):
 
 func hurt(flipped):
 	pass
+
+
+func _on_Player_Sprite_animation_finished():
+	if self.animation == "Death":
+		self.playing = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Player/Player_Sprite.gd" type="Script" id=1]
 [ext_resource path="res://Player/Sprites/Run/SS_Player_Run1.png" type="Texture" id=2]
@@ -13,9 +13,48 @@
 [ext_resource path="res://Player/Sprites/Idle/SS_Player_Idle2.png" type="Texture" id=11]
 [ext_resource path="res://Player/Sprites/Idle/SS_Player_Idle3.png" type="Texture" id=12]
 [ext_resource path="res://Player/Sprites/Idle/SS_Player_Idle4.png" type="Texture" id=13]
+[ext_resource path="res://Player/Sprites/Death/SS_Player_Death3.png" type="Texture" id=14]
+[ext_resource path="res://Player/Sprites/Death/SS_Player_Death7.png" type="Texture" id=15]
+[ext_resource path="res://Player/Sprites/Death/SS_Player_Death5.png" type="Texture" id=16]
+[ext_resource path="res://Player/Sprites/Death/SS_Player_Death4.png" type="Texture" id=17]
+[ext_resource path="res://Player/Sprites/Death/SS_Player_Death6.png" type="Texture" id=18]
+[ext_resource path="res://Player/Sprites/Death/SS_Player_Death2.png" type="Texture" id=19]
+[ext_resource path="res://Player/Sprites/Death/SS_Player_Death1.png" type="Texture" id=20]
+[ext_resource path="res://Player/Sprites/Sword/SS_Player_Sword2.png" type="Texture" id=21]
+[ext_resource path="res://Player/Sprites/Spear/SS_Player_Spear4.png" type="Texture" id=22]
+[ext_resource path="res://Player/Sprites/Spear/SS_Player_Spear1.png" type="Texture" id=23]
+[ext_resource path="res://Player/Sprites/Sword/SS_Player_Sword5.png" type="Texture" id=24]
+[ext_resource path="res://Player/Sprites/Spear/SS_Player_Spear2.png" type="Texture" id=25]
+[ext_resource path="res://Player/Sprites/Sword/SS_Player_Sword4.png" type="Texture" id=26]
+[ext_resource path="res://Player/Sprites/Spear/SS_Player_Spear3.png" type="Texture" id=27]
+[ext_resource path="res://Player/Sprites/Sword/SS_Player_Sword1.png" type="Texture" id=28]
+[ext_resource path="res://Player/Sprites/Sword/SS_Player_Sword3.png" type="Texture" id=29]
+[ext_resource path="res://Player/Sprites/Sword/SS_Player_Sword6.png" type="Texture" id=30]
+[ext_resource path="res://Player/Sprites/Shield/SS_Player_Shield4.png" type="Texture" id=31]
+[ext_resource path="res://Player/Sprites/Shield/SS_Player_Shield1.png" type="Texture" id=32]
+[ext_resource path="res://Player/Sprites/Shield/SS_Player_Shield2.png" type="Texture" id=33]
+[ext_resource path="res://Player/Sprites/Shield/SS_Player_Shield3.png" type="Texture" id=34]
+[ext_resource path="res://Player/Sprites/Claws/SS_Player_Claws3.png" type="Texture" id=35]
+[ext_resource path="res://Player/Sprites/Claws/SS_Player_Claws1.png" type="Texture" id=36]
+[ext_resource path="res://Player/Sprites/Claws/SS_Player_Claws2.png" type="Texture" id=37]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "Attack_Shield",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Death",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shield",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Move",
@@ -26,15 +65,25 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 28 ), ExtResource( 21 ), ExtResource( 29 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 30 ) ],
 "loop": true,
-"name": "Shield",
-"speed": 5.0
+"name": "Attack_Sword",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Attack_Spear",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "Attack_Claw",
+"speed": 10.0
 } ]
 
 [node name="Player_Sprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
-animation = "Idle"
-frame = 2
+animation = "Attack_Shield"
 playing = true
 script = ExtResource( 1 )
+[connection signal="animation_finished" from="." to="." method="_on_Player_Sprite_animation_finished"]
