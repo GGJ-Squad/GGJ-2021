@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/heartBreak2.wav-c2d98c303d82b0c1adde2a0a0065eeff.sample"
+
+[deps]
+
+source_file="res://heartBreak2.wav"
+dest_files=[ "res://.import/heartBreak2.wav-c2d98c303d82b0c1adde2a0a0065eeff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
