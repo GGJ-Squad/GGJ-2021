@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
-[node name="Area" type="Area2D"]
+[node name="Area" type="Area2D" groups=[
+"player_damage",
+]]
 scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 1 )
 
@@ -17,5 +19,4 @@ texture = ExtResource( 2 )
 "player_damage",
 ]]
 shape = SubResource( 1 )
-[connection signal="area_entered" from="." to="." method="_on_Area_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Area_body_entered"]

@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "sword"
+var weapon = "shuriken"
 
 var health = 10
 
@@ -83,13 +83,15 @@ func movement(delta):
 
 func change_weapon(new_weapon):
 	weapon = new_weapon
+	
+	charging = false
 
 func get_weapon_damage():
-	if weapon == "sword": return 2
-	if weapon == "shield": return 3
-	if weapon == "claws": return 1
-	if weapon == "spear": return 3
-	if weapon == "shuriken": return 2
+	if weapon == "sword": return 30
+	if weapon == "shield": return 40
+	if weapon == "claws": return 10
+	if weapon == "spear": return 35
+	if weapon == "shuriken": return 15
 	return 1
 	
 func remove_weapon_hitboxes():
