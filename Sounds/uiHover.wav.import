@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/uiHover.wav-8f015a2ee3634c463369e2ccc7243fba.sample"
+
+[deps]
+
+source_file="res://uiHover.wav"
+dest_files=[ "res://.import/uiHover.wav-8f015a2ee3634c463369e2ccc7243fba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
