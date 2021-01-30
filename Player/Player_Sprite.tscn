@@ -1,6 +1,40 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player_Sprite.gd" type="Script" id=1]
+[ext_resource path="res://Player/Sprites/Run/SS_Player_Run1.png" type="Texture" id=2]
+[ext_resource path="res://Player/Sprites/Run/SS_Player_Run3.png" type="Texture" id=3]
+[ext_resource path="res://Player/Sprites/Run/SS_Player_Run4.png" type="Texture" id=4]
+[ext_resource path="res://Player/Sprites/Run/SS_Player_Run6.png" type="Texture" id=5]
+[ext_resource path="res://Player/Sprites/Run/SS_Player_Run8.png" type="Texture" id=6]
+[ext_resource path="res://Player/Sprites/Run/SS_Player_Run2.png" type="Texture" id=7]
+[ext_resource path="res://Player/Sprites/Run/SS_Player_Run5.png" type="Texture" id=8]
+[ext_resource path="res://Player/Sprites/Run/SS_Player_Run7.png" type="Texture" id=9]
+[ext_resource path="res://Player/Sprites/Idle/SS_Player_Idle1.png" type="Texture" id=10]
+[ext_resource path="res://Player/Sprites/Idle/SS_Player_Idle2.png" type="Texture" id=11]
+[ext_resource path="res://Player/Sprites/Idle/SS_Player_Idle3.png" type="Texture" id=12]
+[ext_resource path="res://Player/Sprites/Idle/SS_Player_Idle4.png" type="Texture" id=13]
 
-[node name="Player_Sprite" type="Node2D"]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Move",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Shield",
+"speed": 5.0
+} ]
+
+[node name="Player_Sprite" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 2
+playing = true
 script = ExtResource( 1 )
