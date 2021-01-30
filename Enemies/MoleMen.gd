@@ -7,7 +7,6 @@ extends KinematicBody2D
 var state ="Wander"
 var health = 100
 var weapon = "Sword"
-var target
 var actor = self
 var rotate
 var origin: Vector2 = global_position
@@ -15,11 +14,11 @@ var patrol_location: Vector2 = Vector2.ZERO
 var patrol_location_reached = false
 var actor_velocity: Vector2= Vector2.ZERO
 var speed = 100
-
+onready var target = get_tree().get_nodes_in_group("Players")[0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var target = get_tree().get_nodes_in_group("Players")[0]
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
