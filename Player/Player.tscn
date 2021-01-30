@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player_Temp.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Player/Spear.gd" type="Script" id=7]
 [ext_resource path="res://Player/Shuriken.gd" type="Script" id=8]
 [ext_resource path="res://Player/Player_Spirte.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Weapons/Shuriken.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -57,7 +58,7 @@ script = ExtResource( 7 )
 
 [node name="Shuriken" type="Sprite" parent="."]
 position = Vector2( 9, 0.3125 )
-rotation = 0.785398
-scale = Vector2( 0.421875, 0.421875 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]

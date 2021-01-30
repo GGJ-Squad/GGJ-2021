@@ -24,7 +24,9 @@ const target_height = 180
 
 var attack_nudge = false
 
-# Called when the node enters the scene tree for the first time.
+var moving_left = false
+var mouse_left = false
+
 func _ready():
 	rescale_camera()
 
@@ -80,15 +82,20 @@ func movement(delta):
 		
 		attack_nudge = false
 	
+	if dir.x < 0:
+		moving_left = true
+	elif dir.x > 0:
+		moving_left = false
+	
 	if speed == 0:
 		if state != "Idle":
 			state = "Idle"
-			$Player_Sprite.change_state("Idle")
+			$Player_Sprite.change_state("Idle", moving_left)
 	else:
 		if state != "Move":
 			state = "Move"
-			$Player_Sprite.change_state("Move")
-		
+			$Player_Sprite.change_state("Move", moving_left)
+	
 	move_and_slide(dir * speed, Vector2.UP)
 	
 	if Input.is_action_pressed("ui_cancel"):
@@ -106,7 +113,7 @@ func get_weapon_damage():
 	if weapon == "shield": return 10
 	if weapon == "claws": return 10
 	if weapon == "spear": return 35
-	if weapon == "shuriken": return 15
+	if weapon == "shuriken": return 12
 	return 1
 	
 func remove_weapon_hitboxes():
@@ -150,9 +157,9 @@ func take_damage(damage):
 	
 	if health <= 0:
 		state = "Death"
-		$Player_Sprite.change_state("Death")
+		$Player_Sprite.change_state("Death", moving_left)
 	else:
-		$Player_Sprite.hurt()
+		$Player_Sprite.hurt(moving_left)
 	
 	emit_signal("damaged", damage)
 	
@@ -162,4 +169,4 @@ func heal(heal_amount):
 	emit_signal("healed", heal_amount)
 
 func attack():
-	$Player_Sprite.make_attack(weapon)
+	$Player_Sprite.make_attack(weapon, get_local_mouse_position().x < 0)
