@@ -25,11 +25,11 @@ particles_anim_h_frames = 2
 particles_anim_v_frames = 2
 particles_anim_loop = false
 
-[sub_resource type="Curve" id=6]
+[sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 1 ), 0.0, -0.272072, 0, 0, Vector2( 1, 0 ), -3.56737, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=4]
-curve = SubResource( 6 )
+curve = SubResource( 3 )
 
 [sub_resource type="ParticlesMaterial" id=5]
 flag_disable_z = true
@@ -46,17 +46,14 @@ scale_curve = SubResource( 4 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 1920, 1080 )
+[node name="Control" type="Node2D"]
 __meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
 [node name="Weapon" type="Node2D" parent="."]
 position = Vector2( 27, 47 )
+z_index = 2
 
 [node name="Weapon_BG" type="Sprite" parent="Weapon"]
 texture = ExtResource( 9 )
@@ -65,6 +62,7 @@ texture = ExtResource( 9 )
 texture = ExtResource( 8 )
 
 [node name="Heart_Controller" type="Node2D" parent="."]
+z_index = 2
 script = ExtResource( 7 )
 
 [node name="Heart0" type="AnimatedSprite" parent="Heart_Controller"]
@@ -122,6 +120,6 @@ texture = ExtResource( 6 )
 [node name="Tween" type="Tween" parent="Heart_Controller"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 anchor_mode = 0
-current = true
 zoom = Vector2( 0.2, 0.2 )
