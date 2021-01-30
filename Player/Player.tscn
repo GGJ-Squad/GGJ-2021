@@ -8,7 +8,7 @@
 [ext_resource path="res://Player/Claws.gd" type="Script" id=6]
 [ext_resource path="res://Player/Spear.gd" type="Script" id=7]
 [ext_resource path="res://Player/Shuriken.gd" type="Script" id=8]
-[ext_resource path="res://Player/Player_Spirte.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/Player_Sprite.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
