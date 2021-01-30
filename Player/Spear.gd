@@ -4,13 +4,11 @@ var cooldown = 0
 
 var active = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if get_parent().weapon == "sword":
+	if get_parent().weapon == "spear":
 		visible = true
 		active = true
 		
@@ -29,7 +27,7 @@ func _input(event):
 		 event.pressed == true and cooldown == 0:
 				var mouse_pos = get_parent().get_local_mouse_position()
 				
-				get_parent().create_circle_hurtbox(mouse_pos.normalized() * 16, 9)
+				get_parent().create_rectangle_hurtbox(mouse_pos.normalized() * 5, mouse_pos.normalized() * 20, 6)
 				
-				cooldown = 0.5
+				cooldown = 0.6
 	
