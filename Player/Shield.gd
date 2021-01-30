@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 var active = false
 
@@ -14,7 +14,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if get_parent().weapon == "shield":
-		visible = true
 		active = true
 		
 		if get_parent().charging == true:
@@ -32,7 +31,6 @@ func _process(delta):
 					
 					queue_hitbox = true
 	else:
-		visible = false
 		active = false
 
 func _input(event):

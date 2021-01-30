@@ -9,6 +9,8 @@ var health = 10
 signal damaged(damage_amount)
 signal healed(heal_amount)
 
+var state = "Idle"
+
 var charging = false
 var charge_vec = Vector2()
 
@@ -22,7 +24,9 @@ const target_height = 180
 
 var attack_nudge = false
 
-# Called when the node enters the scene tree for the first time.
+var moving_left = false
+var mouse_left = false
+
 func _ready():
 	rescale_camera()
 
@@ -57,7 +61,7 @@ func movement(delta):
 		
 		dir = dir.normalized()
 		
-	if dir.x != 0 or dir.y != 0:
+	if dir != Vector2():
 		speed_dampening_multiplier = default_speed_dampening
 		
 		speed = min(max_speed, speed + max_speed * speed_dampening_multiplier * delta)
@@ -78,6 +82,22 @@ func movement(delta):
 		
 		attack_nudge = false
 	
+	if dir.x < 0:
+		if moving_left == false: $Player_Sprite.change_state("Move", true)
+		moving_left = true
+	elif dir.x > 0:
+		if moving_left == true: $Player_Sprite.change_state("Move", false)
+		moving_left = false
+	
+	if speed == 0:
+		if state != "Idle":
+			state = "Idle"
+			$Player_Sprite.change_state("Idle", moving_left)
+	else:
+		if state != "Move":
+			state = "Move"
+			$Player_Sprite.change_state("Move", moving_left)
+	
 	move_and_slide(dir * speed, Vector2.UP)
 	
 	if Input.is_action_pressed("ui_cancel"):
@@ -95,7 +115,7 @@ func get_weapon_damage():
 	if weapon == "shield": return 10
 	if weapon == "claws": return 10
 	if weapon == "spear": return 35
-	if weapon == "shuriken": return 15
+	if weapon == "shuriken": return 12
 	return 1
 	
 func remove_weapon_hitboxes():
@@ -137,9 +157,18 @@ func create_rectangle_hurtbox(start, end, width):
 func take_damage(damage):
 	health -= damage
 	
+	if health <= 0:
+		state = "Death"
+		$Player_Sprite.change_state("Death", moving_left)
+	else:
+		$Player_Sprite.hurt(moving_left)
+	
 	emit_signal("damaged", damage)
 	
 func heal(heal_amount):
 	health += heal_amount
 	
 	emit_signal("healed", heal_amount)
+
+func attack():
+	$Player_Sprite.make_attack(weapon, get_local_mouse_position().x < 0)
