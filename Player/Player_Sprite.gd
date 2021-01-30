@@ -17,9 +17,12 @@ func make_attack(weapon, flipped):
 	pass
 
 func hurt(flipped):
-	pass
+	self.flip_h = flipped
+	self.animation = "Hurt"
 
 
 func _on_Player_Sprite_animation_finished():
 	if self.animation == "Death":
 		self.playing = false
+	if self.animation == "Hurt":
+		self.animation = state

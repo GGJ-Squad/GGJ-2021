@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Player/Player_Sprite.gd" type="Script" id=1]
 [ext_resource path="res://Player/Sprites/Run/SS_Player_Run1.png" type="Texture" id=2]
@@ -37,6 +37,11 @@
 [ext_resource path="res://Player/Sprites/Claws/SS_Player_Claws3.png" type="Texture" id=35]
 [ext_resource path="res://Player/Sprites/Claws/SS_Player_Claws1.png" type="Texture" id=36]
 [ext_resource path="res://Player/Sprites/Claws/SS_Player_Claws2.png" type="Texture" id=37]
+[ext_resource path="res://Player/Sprites/Hurt/SS_Player_Hurt1.png" type="Texture" id=38]
+[ext_resource path="res://Player/Sprites/Hurt/SS_Player_Hurt2.png" type="Texture" id=39]
+[ext_resource path="res://Player/Sprites/Hurt/SS_Player_Hurt3.png" type="Texture" id=40]
+[ext_resource path="res://Player/Sprites/Hurt/SS_Player_Hurt4.png" type="Texture" id=41]
+[ext_resource path="res://Player/Sprites/Hurt/SS_Player_Hurt5.png" type="Texture" id=42]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -50,10 +55,10 @@ animations = [ {
 "name": "Death",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
 "loop": true,
-"name": "Shield",
-"speed": 5.0
+"name": "Hurt",
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ) ],
 "loop": true,
@@ -83,7 +88,8 @@ animations = [ {
 
 [node name="Player_Sprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
-animation = "Attack_Shield"
+animation = "Move"
+frame = 5
 playing = true
 script = ExtResource( 1 )
 [connection signal="animation_finished" from="." to="." method="_on_Player_Sprite_animation_finished"]
