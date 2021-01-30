@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tile_Cave_Floor_N1.png-abde53ff1fb9bc87601ce8687daf3827.stex"
+path="res://.import/Tile_Back_Wall_MidN1.png-055a6bc45c497da2bb469e65a5024d03.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles/Tile_Cave_Floor_N1.png"
-dest_files=[ "res://.import/Tile_Cave_Floor_N1.png-abde53ff1fb9bc87601ce8687daf3827.stex" ]
+source_file="res://Tiles/Tile_Back_Wall_MidN1.png"
+dest_files=[ "res://.import/Tile_Back_Wall_MidN1.png-055a6bc45c497da2bb469e65a5024d03.stex" ]
 
 [params]
 
