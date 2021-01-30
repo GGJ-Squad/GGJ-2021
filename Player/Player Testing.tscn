@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player_Temp.png" type="Texture" id=2]
@@ -6,6 +6,11 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
+
+[sub_resource type="NavigationPolygon" id=2]
+vertices = PoolVector2Array( 191, 106, -191, 107, -190, -106, -105.5, -106.5, -72.5, -105.5, 190, -105 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 0, 4, 5 ) ]
+outlines = [ PoolVector2Array( -105.5, -106.5, -72.5, -105.5, 190, -105, 191, 106, -191, 107, -190, -106 ) ]
 
 [node name="Player Testing" type="Node2D"]
 
@@ -48,3 +53,8 @@ shape = SubResource( 1 )
 
 [node name="Mole Man" parent="." instance=ExtResource( 3 )]
 position = Vector2( 36.7951, -52.2237 )
+
+[node name="LevelNav" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="LevelNav"]
+navpoly = SubResource( 2 )

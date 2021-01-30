@@ -18,7 +18,7 @@ var wander_range = 200
 onready var wander_timer = $WanderTimer
 onready var raycast_timer = $RaycastTimer
 onready var raycast = $RayCast2D
-onready var nav = $Navigation2D
+onready var nav = get_parent().get_node("LevelNav")
 var player_last_seen
 
 
@@ -56,7 +56,8 @@ func wander(delta):
 		
 
 func alert(delta):
-	if raycast.cast_to(target.global_position) == target:
+	raycast.cast_to = target.global_position
+	if raycast.get_collider() == target:
 		_update_navigation_path(actor.position, target.global_position)
 		patrol_location_reached = false
 	else:
