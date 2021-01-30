@@ -3,9 +3,9 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "laser"
+var weapon = "shield"
 
-var health = 10
+var health = 16
 signal damaged(damage_amount)
 signal healed(heal_amount)
 
@@ -35,6 +35,8 @@ const inv_time = 0.8
 var active = true
 
 func _ready():
+	connect("damaged", $UI_Layer/UI/Heart_Controller, "damage")
+	connect("healed", $UI_Layer/UI/Heart_Controller, "heal")
 	rescale_camera()
 
 func rescale_camera():
