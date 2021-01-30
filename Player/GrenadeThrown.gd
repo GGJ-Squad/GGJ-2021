@@ -6,6 +6,7 @@ var speed = 150
 
 var time = 1.5
 var kill = false
+var spawned_area = false
 
 func _ready():
 	pass
@@ -25,7 +26,7 @@ func _process(delta):
 		
 		time -= delta
 		
-		if time < 0:
+		if time < 0 and not spawned_area:
 			var area = Area2D.new()
 			var col_shape = CollisionShape2D.new()
 			col_shape.shape = CircleShape2D.new()
@@ -35,6 +36,8 @@ func _process(delta):
 			
 			add_child(area)
 			area.add_child(col_shape)
+			spawned_area = true
+		if time < -0.1:
 			kill = true
 
 func _on_Grenade_body_entered(body):
