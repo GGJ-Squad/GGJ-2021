@@ -8,9 +8,9 @@
 extents = Vector2( 8, 8 )
 
 [sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( 191, 106, -191, 107, -190, -106, -105.5, -106.5, -72.5, -105.5, 190, -105 )
+vertices = PoolVector2Array( 191, 106, -191, 107, -190, -106, -106.5, -106, -72.5, -105.5, 190, -105 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 0, 4, 5 ) ]
-outlines = [ PoolVector2Array( -105.5, -106.5, -72.5, -105.5, 190, -105, 191, 106, -191, 107, -190, -106 ) ]
+outlines = [ PoolVector2Array( -106.5, -106, -72.5, -105.5, 190, -105, 191, 106, -191, 107, -190, -106 ) ]
 
 [node name="Player Testing" type="Node2D"]
 
