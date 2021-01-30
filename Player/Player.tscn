@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player_Temp.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Player/Sword.gd" type="Script" id=4]
 [ext_resource path="res://Player/Shield.gd" type="Script" id=5]
 [ext_resource path="res://Player/Claws.gd" type="Script" id=6]
+[ext_resource path="res://Player/Spear.gd" type="Script" id=7]
+[ext_resource path="res://Player/Shuriken.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -42,3 +44,16 @@ position = Vector2( 8.79687, 1.17187 )
 scale = Vector2( 0.466797, 0.466797 )
 texture = ExtResource( 1 )
 script = ExtResource( 6 )
+
+[node name="Spear" type="Sprite" parent="."]
+position = Vector2( -10.4219, -2 )
+scale = Vector2( 0.287109, 1 )
+texture = ExtResource( 1 )
+script = ExtResource( 7 )
+
+[node name="Shuriken" type="Sprite" parent="."]
+position = Vector2( 9, 0.3125 )
+rotation = 0.785398
+scale = Vector2( 0.421875, 0.421875 )
+texture = ExtResource( 1 )
+script = ExtResource( 8 )
