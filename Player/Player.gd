@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "flamethrower"
+var weapon = "laser"
 
 var health = 10
 signal damaged(damage_amount)
@@ -29,6 +29,9 @@ var mouse_left = false
 
 var distance_travelled = 0
 
+var invulnerable = 0
+const inv_time = 0.8
+
 func _ready():
 	rescale_camera()
 
@@ -39,6 +42,8 @@ func rescale_camera():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	movement(delta)
+	
+	invulnerable = max(0, invulnerable - delta)
 
 func movement(delta):
 	var mouse_pos = get_local_mouse_position()
@@ -123,6 +128,7 @@ func get_weapon_damage():
 	if weapon == "grenade": return 50
 	if weapon == "trail": return 4
 	if weapon == "flamethrower": return 8
+	if weapon == "laser": return 3
 	return 1
 	
 func remove_weapon_hitboxes():
@@ -150,7 +156,7 @@ func create_rectangle_hurtbox(start, end, width):
 	col_shape.rotate(atan2(start.y - end.y, start.x - end.x))
 	
 	col_shape.shape.extents.y = width / 2
-	col_shape.shape.extents.x = sqrt(pow((start.x - end.x), 2) + pow((start.y - end.y), 2))
+	col_shape.shape.extents.x = (end.length() - start.length()) / 2
 	
 	area.position.x += (end.x + start.x) / 2
 	area.position.y += (end.y + start.y) / 2
@@ -162,15 +168,20 @@ func create_rectangle_hurtbox(start, end, width):
 	area.add_child(col_shape)
 
 func take_damage(damage):
-	health -= damage
-	
-	if health <= 0:
-		state = "Death"
-		$Player_Sprite.change_state("Death", moving_left)
-	else:
-		$Player_Sprite.hurt(moving_left)
-	
-	emit_signal("damaged", damage)
+	if invulnerable == 0:
+		invulnerable = inv_time
+		
+		health -= damage
+		
+		print(health, " ", damage)
+		
+		if health <= 0:
+			state = "Death"
+			$Player_Sprite.change_state("Death", moving_left)
+		else:
+			$Player_Sprite.hurt(moving_left)
+		
+		emit_signal("damaged", damage)
 	
 func heal(heal_amount):
 	health += heal_amount

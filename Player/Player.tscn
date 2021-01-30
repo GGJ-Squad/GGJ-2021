@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Grenade.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Player/Shuriken.gd" type="Script" id=8]
 [ext_resource path="res://Player/Player_Sprite.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Player/Flamethrower.gd" type="Script" id=10]
+[ext_resource path="res://Player/Laser.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 12 )
@@ -63,3 +64,8 @@ script = ExtResource( 3 )
 
 [node name="Flamethrower" type="Node2D" parent="."]
 script = ExtResource( 10 )
+
+[node name="Laser" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="LaserRaycast" type="RayCast2D" parent="."]

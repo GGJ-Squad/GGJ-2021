@@ -4,52 +4,17 @@
 [ext_resource path="res://Player/Player_Temp.png" type="Texture" id=2]
 [ext_resource path="res://Enemies/MoleMen.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
-
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 191, 106, -191, 107, -190, -106, -106.5, -106, -72.5, -105.5, 190, -105 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 0, 4, 5 ) ]
 outlines = [ PoolVector2Array( -106.5, -106, -72.5, -105.5, 190, -105, 191, 106, -191, 107, -190, -106 ) ]
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 8 )
+
 [node name="Player Testing" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-
-[node name="Player_Temp" type="Sprite" parent="."]
-position = Vector2( 42.8038, -16.9396 )
-texture = ExtResource( 2 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Player_Temp"]
-position = Vector2( -42.8038, 16.9396 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Temp/StaticBody2D"]
-position = Vector2( 42.8101, -16.9157 )
-shape = SubResource( 1 )
-
-[node name="Player_Temp2" type="Sprite" parent="."]
-position = Vector2( -29.5712, -26.5646 )
-rotation = 0.888373
-texture = ExtResource( 2 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Player_Temp2"]
-position = Vector2( -42.8038, 16.9396 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Temp2/StaticBody2D"]
-position = Vector2( 42.8101, -16.9157 )
-shape = SubResource( 1 )
-
-[node name="Player_Temp3" type="Sprite" parent="."]
-position = Vector2( 16.9288, -22.0021 )
-rotation = -0.246091
-texture = ExtResource( 2 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Player_Temp3"]
-position = Vector2( -42.8038, 16.9396 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Temp3/StaticBody2D"]
-position = Vector2( 42.8101, -16.9157 )
-shape = SubResource( 1 )
 
 [node name="Mole Man" parent="." instance=ExtResource( 3 )]
 position = Vector2( 36.7951, -52.2237 )
@@ -58,3 +23,39 @@ position = Vector2( 36.7951, -52.2237 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="LevelNav"]
 navpoly = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 53.8593, 1.12373 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( -25.7382, -17.6051 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 7.03726, -32.4009 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D3"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 167.918, 26.4077 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D4"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource( 3 )

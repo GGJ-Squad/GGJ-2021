@@ -25,7 +25,7 @@ func _input(event):
 		 event.pressed == true and cooldown == 0:
 				var mouse_pos = get_parent().get_local_mouse_position()
 				
-				get_parent().create_rectangle_hurtbox(mouse_pos.normalized() * 5, mouse_pos.normalized() * 20, 6)
+				get_parent().create_rectangle_hurtbox(mouse_pos.normalized() * 5, mouse_pos.normalized() * 20, 8)
 				
 				cooldown = 0.6
 	
