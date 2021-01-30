@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 var cooldown = 0
 
@@ -11,7 +11,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if get_parent().weapon == "sword":
-		visible = true
 		active = true
 		
 		if cooldown > 0:
@@ -20,7 +19,6 @@ func _process(delta):
 			if cooldown == 0:
 				get_parent().remove_weapon_hitboxes()
 	else:
-		visible = false
 		active = false
 
 func _input(event):

@@ -83,8 +83,10 @@ func movement(delta):
 		attack_nudge = false
 	
 	if dir.x < 0:
+		if moving_left == false: $Player_Sprite.change_state("Move", true)
 		moving_left = true
 	elif dir.x > 0:
+		if moving_left == true: $Player_Sprite.change_state("Move", false)
 		moving_left = false
 	
 	if speed == 0:

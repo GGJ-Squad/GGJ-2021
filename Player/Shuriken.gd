@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 var active = false
 
@@ -10,12 +10,10 @@ func _ready():
 
 func _process(delta):
 	if get_parent().weapon == "shuriken":
-		visible = true
 		active = true
 		
 		cooldown = max(0, cooldown - delta)
 	else:
-		visible = false
 		active = false
 
 

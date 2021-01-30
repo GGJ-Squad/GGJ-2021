@@ -1,4 +1,4 @@
-extends Sprite
+extends Node2D
 
 var active = false
 
@@ -14,7 +14,6 @@ func _ready():
 
 func _process(delta):
 	if get_parent().weapon == "claws":
-		visible = true
 		active = true
 		
 		if held:
@@ -37,7 +36,6 @@ func _process(delta):
 			
 
 	else:
-		visible = false
 		active = false
 
 
