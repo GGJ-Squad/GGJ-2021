@@ -27,6 +27,8 @@ func _process(delta):
 				
 				queue_hitbox = false
 				get_parent().attack_nudge = true
+				
+				get_parent().attack()
 			elif cooldown <= 0:
 				cooldown = max(1 / (1 + hold_time * 2), 0.1)
 				

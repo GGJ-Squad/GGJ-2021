@@ -30,3 +30,4 @@ func _input(event):
 				inst.position += mouse_pos.normalized() * 10 + get_parent().position
 				
 				get_parent().get_parent().add_child(inst)
+				get_parent().attack()
