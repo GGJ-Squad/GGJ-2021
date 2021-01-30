@@ -35,7 +35,7 @@ func damage(in_damage):
 	$Tween.interpolate_property(get_node("Heart_Overlay"), "modulate", Color(1,0,0,1), Color(1,0,0,0), 0.5, Tween.TRANS_LINEAR)
 	$Tween.start()
 	cur_health -= in_damage
-	$Heart_Shards.position = Vector2(h_index * 80 + 60, 60)
+	$Heart_Shards.position = Vector2(h_index * 21 + 17, 16)
 	$Heart_Shards.emitting = true
 
 func set_health(health):
