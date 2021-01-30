@@ -23,6 +23,7 @@ var player_last_seen
 var player_detected = false
 var body
 var damage = 1
+var damagecooldown = 1
 
 
 
@@ -74,7 +75,10 @@ func alert(delta):
 		state = "Wander"
 
 func attack(delta):
-	target.take_damage(damage)
+	if damagecooldown <0:
+		target.take_damage(damage)
+		damagecooldown = 1
+	damagecooldown-=delta
 
 
 func _on_Ai_state_changed(state,body):
