@@ -6,6 +6,8 @@ var max_speed = 100
 var weapon = "shuriken"
 
 var health = 10
+signal damaged(damage_amount)
+signal healed(heal_amount)
 
 var charging = false
 var charge_vec = Vector2()
@@ -85,10 +87,12 @@ func change_weapon(new_weapon):
 	weapon = new_weapon
 	
 	charging = false
+	
+	remove_weapon_hitboxes()
 
 func get_weapon_damage():
 	if weapon == "sword": return 30
-	if weapon == "shield": return 40
+	if weapon == "shield": return 10
 	if weapon == "claws": return 10
 	if weapon == "spear": return 35
 	if weapon == "shuriken": return 15
@@ -129,3 +133,13 @@ func create_rectangle_hurtbox(start, end, width):
 	
 	add_child(area)
 	area.add_child(col_shape)
+
+func take_damage(damage):
+	health -= damage
+	
+	emit_signal("damaged", damage)
+	
+func heal(heal_amount):
+	health += heal_amount
+	
+	emit_signal("healed", heal_amount)

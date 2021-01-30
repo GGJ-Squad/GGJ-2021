@@ -8,7 +8,6 @@ var hold_time = 0
 var held = false
 
 var queue_hitbox = false
-var wait_for_attack = false
 
 func _ready():
 	pass 
@@ -28,17 +27,15 @@ func _process(delta):
 				get_parent().create_circle_hurtbox(mouse_pos.normalized() * 8, 7)
 				
 				queue_hitbox = false
-				wait_for_attack = true
 				get_parent().attack_nudge = true
-			
-			if cooldown <= 0 and not wait_for_attack:
-				cooldown = 1 / (1 + hold_time * 2)
+			elif cooldown <= 0:
+				cooldown = max(1 / (1 + hold_time * 2), 0.1)
 				
 				get_parent().remove_weapon_hitboxes()
 				
 				queue_hitbox = true
 			
-			wait_for_attack = false
+
 	else:
 		visible = false
 		active = false
