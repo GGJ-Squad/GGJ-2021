@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "shuriken"
+var weapon = "sword"
 
 var health = 10
 

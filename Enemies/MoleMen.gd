@@ -19,7 +19,7 @@ var speed = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var target = get_tree().get_nodes_in_group("Player")[0]
+	var target = get_tree().get_nodes_in_group("Players")[0]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
