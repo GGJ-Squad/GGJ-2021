@@ -36,6 +36,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
 cast_to = Vector2( 0, 25 )
 
 [node name="RaycastTimer" type="Timer" parent="."]
