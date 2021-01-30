@@ -54,15 +54,6 @@ func freeze(delta):
 func look(delta):
 	pass
 
-func _on_Mole_Man_body_entered(body):
-	if body.is_in_group("player_damage"):
-		health -= body.get_weapon_damage()
-		print("health")
-		if health <= 0:
-			target.change_weapon(weapon)
-			queue_free()
-			
-
 
 func _on_Ai_state_changed(updated_state):
 	state = updated_state
@@ -77,3 +68,12 @@ func _on_Ai_state_changed(updated_state):
 
 func _on_WanderTimer_timeout():
 	pass # Replace with function body.
+
+
+func _on_Hurtbox_area_entered(area):
+	if area.is_in_group("player_damage"):
+		health -= area.get_weapon_damage()
+		print("health")
+		if health <= 0:
+			target.change_weapon(weapon)
+			queue_free()
