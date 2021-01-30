@@ -25,20 +25,9 @@ func _input(event):
 				get_parent().charging = true
 				get_parent().charge_vec = mouse_pos.normalized()
 				
-				var area = Area2D.new()
-				var col_shape = CollisionShape2D.new()
-				col_shape.shape = CircleShape2D.new()
-				col_shape.shape.radius = 10
-				area.name = "weapon_area"
-				area.add_to_group("player_damage")
-				
-				area.position += mouse_pos.normalized() * 8
-				
-				get_parent().add_child(area)
-				area.add_child(col_shape)
+				get_parent().create_circle_hurtbox(mouse_pos.normalized() * 8, 10)
 				
 			elif event.pressed == false:
 				get_parent().charging = false
 				
-				for c in get_parent().get_children():
-					if c.name == "weapon_area": c.queue_free()
+				get_parent().remove_weapon_hitboxes()

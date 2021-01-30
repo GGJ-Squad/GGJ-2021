@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "shield"
+var weapon = "claws"
 
 var health = 10
 
@@ -76,3 +76,20 @@ func get_weapon_damage():
 	if weapon == "sword": return 2
 	if weapon == "shield": return 3
 	return 1
+	
+func remove_weapon_hitboxes():
+	for c in get_children():
+		if c.name == "weapon_area": c.queue_free()
+
+func create_circle_hurtbox(offset, radius):
+	var area = Area2D.new()
+	var col_shape = CollisionShape2D.new()
+	col_shape.shape = CircleShape2D.new()
+	col_shape.shape.radius = radius
+	area.name = "weapon_area"
+	area.add_to_group("player_damage")
+	
+	area.position += offset
+	
+	add_child(area)
+	area.add_child(col_shape)
