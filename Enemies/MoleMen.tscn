@@ -40,7 +40,7 @@ enabled = true
 cast_to = Vector2( 0, 25 )
 
 [node name="RaycastTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.001
 one_shot = true
 
 [node name="Navigation2D" type="Navigation2D" parent="."]

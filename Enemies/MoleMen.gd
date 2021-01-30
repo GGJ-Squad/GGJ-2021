@@ -20,6 +20,7 @@ onready var raycast_timer = $RaycastTimer
 onready var raycast = $RayCast2D
 onready var nav = get_parent().get_node("LevelNav")
 var player_last_seen
+var player_detected = false
 
 
 
@@ -46,7 +47,7 @@ func _process(delta):
 		look(delta)
 	if patrol_location_reached == false:
 		move_along_path(speed*delta)
-
+		print(state)
 func wander(delta):
 	if not patrol_location_reached:
 		if actor.global_position.distance_to(patrol_location) < 4:
@@ -56,9 +57,9 @@ func wander(delta):
 		
 
 func alert(delta):
-	raycast.cast_to = 2 * (target.global_position - actor.global_position)
-	print(raycast.get_collider())
-	if raycast.get_collider() == target:
+	raycast.cast_to = target.global_position - actor.global_position
+	if raycast.get_collider() == target or player_detected:
+		player_detected = true
 		_update_navigation_path(actor.position, target.global_position)
 		patrol_location_reached = false
 	else:
@@ -86,8 +87,9 @@ func _on_Ai_state_changed(state,body):
 		patrol_location_reached = false
 	elif state == "Look":
 		player_last_seen = body.global_position
-		_update_navigation_path(actor.position, patrol_location)
+		_update_navigation_path(actor.position, player_last_seen)
 		patrol_location_reached = false
+		player_detected = false
 		
 func move_along_path(distance):
 	var last_point = actor.position
