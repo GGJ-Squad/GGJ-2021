@@ -142,4 +142,4 @@ func _on_Hurtbox_body_entered(body):
 
 func _on_RaycastTimer_timeout():
 	if state == "Wander":
-		state == "Alert"
+		state = "Alert"
