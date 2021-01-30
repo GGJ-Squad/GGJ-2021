@@ -5,13 +5,13 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var health = 100
-var weapon = "sword"
+var weapon = "spear"
 var actor = self
 var rotate
 var patrol_location: Vector2 = Vector2.ZERO
 var patrol_location_reached = false
 var actor_velocity: Vector2= Vector2.ZERO
-var speed = 50
+var speed = 60
 var path = []
 var state ="Wander"
 var wander_range = 200
@@ -29,8 +29,8 @@ onready var target = get_tree().get_nodes_in_group("Players")[0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("Ai/Alert/CollisionShape2D").shape.radius = 78
-	get_node("Ai/Attack Range/CollisionShape2D").shape.radius =19
+	get_node("Ai/Alert/CollisionShape2D").shape.radius = 84
+	get_node("Ai/Attack Range/CollisionShape2D").shape.radius =30
 	randomize()
 	var random_x = rand_range(-wander_range,wander_range)
 	var random_y = rand_range(-wander_range,wander_range)
