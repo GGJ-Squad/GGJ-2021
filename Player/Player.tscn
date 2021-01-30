@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Player/Grenade.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Player/Sword.gd" type="Script" id=4]
 [ext_resource path="res://Player/Shield.gd" type="Script" id=5]
@@ -22,9 +23,11 @@ zoom = Vector2( 0.2, 0.2 )
 smoothing_enabled = true
 
 [node name="Player_Sprite" parent="." instance=ExtResource( 9 )]
+position = Vector2( 0.125, -0.25 )
 frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2 )
 shape = SubResource( 1 )
 
 [node name="Sword" type="Node2D" parent="."]
@@ -50,4 +53,5 @@ script = ExtResource( 7 )
 position = Vector2( 9, 0.3125 )
 script = ExtResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Grenade" type="Node2D" parent="."]
+script = ExtResource( 1 )

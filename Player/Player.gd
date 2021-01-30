@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "shuriken"
+var weapon = "grenade"
 
 var health = 10
 signal damaged(damage_amount)
@@ -113,9 +113,10 @@ func change_weapon(new_weapon):
 func get_weapon_damage():
 	if weapon == "sword": return 30
 	if weapon == "shield": return 10
-	if weapon == "claws": return 10
+	if weapon == "claws": return 8
 	if weapon == "spear": return 35
 	if weapon == "shuriken": return 12
+	if weapon == "grenade": return 50
 	return 1
 	
 func remove_weapon_hitboxes():
