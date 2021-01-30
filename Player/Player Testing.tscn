@@ -47,4 +47,4 @@ position = Vector2( 42.8101, -16.9157 )
 shape = SubResource( 1 )
 
 [node name="Mole Man" parent="." instance=ExtResource( 3 )]
-position = Vector2( 109.755, -106.663 )
+position = Vector2( 36.7951, -52.2237 )
