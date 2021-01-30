@@ -56,7 +56,8 @@ func wander(delta):
 		
 
 func alert(delta):
-	raycast.cast_to = target.global_position
+	raycast.cast_to = 2 * (target.global_position - actor.global_position)
+	print(raycast.get_collider())
 	if raycast.get_collider() == target:
 		_update_navigation_path(actor.position, target.global_position)
 		patrol_location_reached = false
