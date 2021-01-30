@@ -11,7 +11,7 @@ var rotate
 var patrol_location: Vector2 = Vector2.ZERO
 var patrol_location_reached = false
 var actor_velocity: Vector2= Vector2.ZERO
-var speed = 30
+var speed = 50
 var path = []
 var state ="Wander"
 var wander_range = 200
@@ -21,6 +21,8 @@ onready var raycast = $RayCast2D
 onready var nav = get_parent().get_node("LevelNav")
 var player_last_seen
 var player_detected = false
+var body
+var damage = 1
 
 
 
@@ -43,8 +45,7 @@ func _process(delta):
 		alert(delta)
 	elif state == "Attack":
 		attack(delta)
-	elif state == "Look":
-		look(delta)
+		
 	if patrol_location_reached == false:
 		move_along_path(speed*delta)
 #		print(state)
@@ -60,9 +61,10 @@ func wander(delta):
 func alert(delta):
 	raycast.cast_to = target.global_position - actor.global_position
 	raycast.cast_to *= 1.5
-	raycast.update()
+	raycast.force_raycast_update()
 #	print(raycast.get_collider())
 #	print(target)
+	print(raycast.get_collider() == target or player_detected)
 	if raycast.get_collider() == target or player_detected:
 		player_detected = true
 		_update_navigation_path(actor.position, target.global_position)
@@ -72,17 +74,12 @@ func alert(delta):
 		state = "Wander"
 
 func attack(delta):
-	pass
-
-func freeze(delta):
-	pass
-
-func look(delta):
-	pass
+	target.take_damage(damage)
 
 
 func _on_Ai_state_changed(state,body):
 	self.state = state
+	self.body = body
 	if state == "Wander":
 		randomize()
 		var random_x = rand_range(-wander_range,wander_range)

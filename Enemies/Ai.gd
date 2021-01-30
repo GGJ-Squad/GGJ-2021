@@ -46,5 +46,6 @@ func _on_Attack_Range_body_exited(body):
 
 
 func _on_LookTimer_timeout():
-	state="Wander"
-	emit_signal("state_changed",state,null)
+	if state=="Look":
+		state="Wander"
+		emit_signal("state_changed",state,null)
