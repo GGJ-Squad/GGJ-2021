@@ -5,7 +5,7 @@ var cur_health = 16
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	yield(get_tree().create_timer(1.0), "timeout")
-	damage(4)
+	damage(6)
 	yield(get_tree().create_timer(2.0), "timeout")
 	damage(1)
 	yield(get_tree().create_timer(2.0), "timeout")
@@ -20,6 +20,8 @@ func heal(in_heal):
 			if child.frame == 4:
 				h_index += 1
 				continue
+	$Tween.interpolate_property(get_node("Heart_Overlay"), "modulate", Color(0,1,0,1), Color(0,1,0,0), 0.5, Tween.TRANS_LINEAR)
+	$Tween.start()
 	set_health(cur_health + in_heal)
 
 func damage(in_damage):
@@ -30,6 +32,8 @@ func damage(in_damage):
 			if child.frame == 4:
 				h_index += 1
 				continue
+	$Tween.interpolate_property(get_node("Heart_Overlay"), "modulate", Color(1,0,0,1), Color(1,0,0,0), 0.5, Tween.TRANS_LINEAR)
+	$Tween.start()
 	cur_health -= in_damage
 	$Heart_Shards.position = Vector2(h_index * 80 + 60, 60)
 	$Heart_Shards.emitting = true
