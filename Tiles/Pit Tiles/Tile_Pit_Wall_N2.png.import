@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tile_Back_Wall_MidN1.png-055a6bc45c497da2bb469e65a5024d03.stex"
+path="res://.import/Tile_Pit_Wall_N2.png-59c0830ffc15a9ced0ae2044b78250a9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles/Tile_Back_Wall_MidN1.png"
-dest_files=[ "res://.import/Tile_Back_Wall_MidN1.png-055a6bc45c497da2bb469e65a5024d03.stex" ]
+source_file="res://Tiles/Pit Tiles/Tile_Pit_Wall_N2.png"
+dest_files=[ "res://.import/Tile_Pit_Wall_N2.png-59c0830ffc15a9ced0ae2044b78250a9.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tile_Back_Wall_MidN2.png-de1db5bd9d7117f365e1dd8ecd8d1f35.stex"
+path="res://.import/Tile_Crack_N2.png-00ff12ee73a1b9ed7f336ac1cc68036e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles/Tile_Back_Wall_MidN2.png"
-dest_files=[ "res://.import/Tile_Back_Wall_MidN2.png-de1db5bd9d7117f365e1dd8ecd8d1f35.stex" ]
+source_file="res://Tiles/Floor Decor Tiles/Tile_Crack_N2.png"
+dest_files=[ "res://.import/Tile_Crack_N2.png-00ff12ee73a1b9ed7f336ac1cc68036e.stex" ]
 
 [params]
 
