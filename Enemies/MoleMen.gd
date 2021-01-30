@@ -47,7 +47,8 @@ func _process(delta):
 		look(delta)
 	if patrol_location_reached == false:
 		move_along_path(speed*delta)
-		print(state)
+#		print(state)
+	$Label.text = state
 func wander(delta):
 	if not patrol_location_reached:
 		if actor.global_position.distance_to(patrol_location) < 4:
@@ -58,6 +59,10 @@ func wander(delta):
 
 func alert(delta):
 	raycast.cast_to = target.global_position - actor.global_position
+	raycast.cast_to *= 1.5
+	raycast.update()
+#	print(raycast.get_collider())
+#	print(target)
 	if raycast.get_collider() == target or player_detected:
 		player_detected = true
 		_update_navigation_path(actor.position, target.global_position)
