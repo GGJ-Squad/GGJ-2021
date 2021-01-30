@@ -9,6 +9,8 @@ var health = 10
 signal damaged(damage_amount)
 signal healed(heal_amount)
 
+var state = "Idle"
+
 var charging = false
 var charge_vec = Vector2()
 
@@ -57,7 +59,7 @@ func movement(delta):
 		
 		dir = dir.normalized()
 		
-	if dir.x != 0 or dir.y != 0:
+	if dir != Vector2():
 		speed_dampening_multiplier = default_speed_dampening
 		
 		speed = min(max_speed, speed + max_speed * speed_dampening_multiplier * delta)
@@ -78,6 +80,15 @@ func movement(delta):
 		
 		attack_nudge = false
 	
+	if speed == 0:
+		if state != "Idle":
+			state = "Idle"
+			$Player_Sprite.change_state("Idle")
+	else:
+		if state != "Move":
+			state = "Move"
+			$Player_Sprite.change_state("Move")
+		
 	move_and_slide(dir * speed, Vector2.UP)
 	
 	if Input.is_action_pressed("ui_cancel"):
@@ -137,9 +148,18 @@ func create_rectangle_hurtbox(start, end, width):
 func take_damage(damage):
 	health -= damage
 	
+	if health <= 0:
+		state = "Death"
+		$Player_Sprite.change_state("Death")
+	else:
+		$Player_Sprite.hurt()
+	
 	emit_signal("damaged", damage)
 	
 func heal(heal_amount):
 	health += heal_amount
 	
 	emit_signal("healed", heal_amount)
+
+func attack():
+	$Player_Sprite.make_attack(weapon)
