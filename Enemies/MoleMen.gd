@@ -72,7 +72,7 @@ func _on_WanderTimer_timeout():
 
 func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
-		health -= area.get_weapon_damage()
+		health -= target.get_weapon_damage()
 		print("health")
 		if health <= 0:
 			target.change_weapon(weapon)
