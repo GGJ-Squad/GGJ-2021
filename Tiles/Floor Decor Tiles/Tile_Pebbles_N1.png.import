@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tile_Pebbles_N1.png-212cc69ca9e4323939fc604e0042a9e1.stex"
+path="res://.import/Tile_Pebbles_N1.png-af002f53a369308b4d31f1bb9384681e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles/Tile_Pebbles_N1.png"
-dest_files=[ "res://.import/Tile_Pebbles_N1.png-212cc69ca9e4323939fc604e0042a9e1.stex" ]
+source_file="res://Tiles/Floor Decor Tiles/Tile_Pebbles_N1.png"
+dest_files=[ "res://.import/Tile_Pebbles_N1.png-af002f53a369308b4d31f1bb9384681e.stex" ]
 
 [params]
 

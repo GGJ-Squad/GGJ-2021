@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tile_Cave_Floor_Edge_N2.png-555a27a57c7e8bbbb417797ae0a341e3.stex"
+path="res://.import/Tile_Cave_Floor_N1.png-7229c459464e97298b83276f962c6db8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles/Tile_Cave_Floor_Edge_N2.png"
-dest_files=[ "res://.import/Tile_Cave_Floor_Edge_N2.png-555a27a57c7e8bbbb417797ae0a341e3.stex" ]
+source_file="res://Tiles/Floor Tiles/Tile_Cave_Floor_N1.png"
+dest_files=[ "res://.import/Tile_Cave_Floor_N1.png-7229c459464e97298b83276f962c6db8.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tile_Pebbles_N2.png-5a8d5495241576d2b2db08a89c06447c.stex"
+path="res://.import/Tile_Crack_N1.png-281d57ca554d08434ba18266158a00ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles/Tile_Pebbles_N2.png"
-dest_files=[ "res://.import/Tile_Pebbles_N2.png-5a8d5495241576d2b2db08a89c06447c.stex" ]
+source_file="res://Tiles/Floor Decor Tiles/Tile_Crack_N1.png"
+dest_files=[ "res://.import/Tile_Crack_N1.png-281d57ca554d08434ba18266158a00ca.stex" ]
 
 [params]
 
