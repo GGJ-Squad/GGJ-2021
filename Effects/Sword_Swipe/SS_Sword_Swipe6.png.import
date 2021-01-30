@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SS_Sword_Swipe1.png-ff76579e15d33c6be38ca1e491b4c658.stex"
+path="res://.import/SS_Sword_Swipe6.png-5a0708728134801613de15da01763bb3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SpriteSheets/SS_Sword_Swipe1.png"
-dest_files=[ "res://.import/SS_Sword_Swipe1.png-ff76579e15d33c6be38ca1e491b4c658.stex" ]
+source_file="res://Effects/Sword_Swipe/SS_Sword_Swipe6.png"
+dest_files=[ "res://.import/SS_Sword_Swipe6.png-5a0708728134801613de15da01763bb3.stex" ]
 
 [params]
 
