@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "grenade"
+var weapon = "flamethrower"
 
 var health = 10
 signal damaged(damage_amount)
@@ -26,6 +26,8 @@ var attack_nudge = false
 
 var moving_left = false
 var mouse_left = false
+
+var distance_travelled = 0
 
 func _ready():
 	rescale_camera()
@@ -98,7 +100,9 @@ func movement(delta):
 			state = "Move"
 			$Player_Sprite.change_state("Move", moving_left)
 	
-	move_and_slide(dir * speed, Vector2.UP)
+	var distance = move_and_slide(dir * speed, Vector2.UP)
+	
+	distance_travelled += distance.length() * delta
 	
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
@@ -117,6 +121,8 @@ func get_weapon_damage():
 	if weapon == "spear": return 35
 	if weapon == "shuriken": return 12
 	if weapon == "grenade": return 50
+	if weapon == "trail": return 4
+	if weapon == "flamethrower": return 8
 	return 1
 	
 func remove_weapon_hitboxes():

@@ -1,51 +1,41 @@
 extends Node2D
 
+
 var active = false
-
-var cooldown = 0
-var hold_time = 0
-
 var held = false
-
+var cooldown = 0
 var queue_hitbox = false
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass 
+	pass # Replace with function body.
 
 func _process(delta):
-	if get_parent().weapon == "claws":
+	if get_parent().weapon == "flamethrower":
 		active = true
 		
 		if held:
-			hold_time += delta
 			cooldown -= delta
 			
 			if queue_hitbox:
+				queue_hitbox = false
+				
 				var mouse_pos = get_parent().get_local_mouse_position()
 				
-				get_parent().create_circle_hurtbox(mouse_pos.normalized() * 8, 7)
-				
-				queue_hitbox = false
-				get_parent().attack_nudge = true
+				get_parent().create_rectangle_hurtbox(mouse_pos.normalized() * 5, mouse_pos.normalized() * 32, 18)
 			elif cooldown <= 0:
-				cooldown = max(1 / (1 + hold_time * 2), 0.1)
-				
 				get_parent().remove_weapon_hitboxes()
-				
 				queue_hitbox = true
-			
-
+				cooldown = 0.2
 	else:
 		active = false
 		held = false
-
 
 func _input(event):
 	if active:
 		if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 			if event.pressed == true:
 				held = true
-				hold_time = 0
 				cooldown = 0.5
 				queue_hitbox = true
 			elif event.pressed == false:

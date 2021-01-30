@@ -28,6 +28,7 @@ func _input(event):
 				var mouse_pos = get_parent().get_local_mouse_position()
 				
 				get_parent().create_circle_hurtbox(mouse_pos.normalized() * 16, 9)
+				get_parent().attack()
 				
 				cooldown = 0.5
 	

@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Grenade.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Player/Trail.gd" type="Script" id=3]
 [ext_resource path="res://Player/Sword.gd" type="Script" id=4]
 [ext_resource path="res://Player/Shield.gd" type="Script" id=5]
 [ext_resource path="res://Player/Claws.gd" type="Script" id=6]
 [ext_resource path="res://Player/Spear.gd" type="Script" id=7]
 [ext_resource path="res://Player/Shuriken.gd" type="Script" id=8]
 [ext_resource path="res://Player/Player_Sprite.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/Flamethrower.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 12 )
@@ -24,7 +26,7 @@ smoothing_enabled = true
 
 [node name="Player_Sprite" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0.125, -0.25 )
-frame = 3
+frame = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2 )
@@ -55,3 +57,9 @@ script = ExtResource( 8 )
 
 [node name="Grenade" type="Node2D" parent="."]
 script = ExtResource( 1 )
+
+[node name="Trail" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Flamethrower" type="Node2D" parent="."]
+script = ExtResource( 10 )
