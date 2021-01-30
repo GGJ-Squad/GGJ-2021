@@ -32,6 +32,8 @@ var distance_travelled = 0
 var invulnerable = 0
 const inv_time = 0.8
 
+var active = true
+
 func _ready():
 	rescale_camera()
 
@@ -41,7 +43,7 @@ func rescale_camera():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	movement(delta)
+	if active and state != "Death": movement(delta)
 	
 	invulnerable = max(0, invulnerable - delta)
 
