@@ -14,7 +14,7 @@
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 12 )
+extents = Vector2( 6.32492, 4.70547 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Players",
@@ -28,10 +28,11 @@ smoothing_enabled = true
 
 [node name="Player_Sprite" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0.125, -0.25 )
-frame = 1
+animation = "Idle"
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
+position = Vector2( 0.111362, 9.34992 )
 shape = SubResource( 1 )
 
 [node name="Sword" type="Node2D" parent="."]
