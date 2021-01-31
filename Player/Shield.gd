@@ -21,6 +21,7 @@ func _process(delta):
 				queue_hitbox = false
 				
 				get_parent().create_circle_hurtbox(get_parent().charge_vec * 8, 10)
+				get_parent().attack()
 			else:
 				cooldown -= delta
 				

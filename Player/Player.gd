@@ -35,8 +35,8 @@ const inv_time = 0.8
 var active = true
 
 func _ready():
-	connect("damaged", $UI_Layer/UI/Heart_Controller, "damage")
-	connect("healed", $UI_Layer/UI/Heart_Controller, "heal")
+	self.connect("damaged", $UI_Layer/UI/Heart_Controller, "damage")
+	self.connect("healed", $UI_Layer/UI/Heart_Controller, "heal")
 	rescale_camera()
 
 func rescale_camera():
@@ -137,7 +137,8 @@ func get_weapon_damage():
 	
 func remove_weapon_hitboxes():
 	for c in get_children():
-		if c.name == "weapon_area": c.queue_free()
+		if c.name.count("weapon_area") > 0: 
+			c.queue_free()
 
 func create_circle_hurtbox(offset, radius):
 	var area = Area2D.new()
@@ -193,4 +194,4 @@ func heal(heal_amount):
 	emit_signal("healed", heal_amount)
 
 func attack():
-	$Player_Sprite.make_attack(weapon, get_local_mouse_position().x < 0)
+	$Player_Sprite.make_attack(weapon, get_local_mouse_position().x < 0, get_local_mouse_position())
