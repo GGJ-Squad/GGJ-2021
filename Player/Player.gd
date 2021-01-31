@@ -23,6 +23,7 @@ var last_dir = Vector2()
 
 const target_width = 320
 const target_height = 180
+const KNOCKBACK_AMOUNT = 30
 
 var attack_nudge = false
 
@@ -60,7 +61,7 @@ func _process(delta):
 	if step_timer <= 0:
 		play_step_sound()
 	
-	if health < MAX_HEALTH:
+	if health < MAX_HEALTH and state != "Death":
 		regen_timer -= delta
 	if regen_timer <= 0:
 		heal(1)
@@ -171,7 +172,7 @@ func get_weapon_damage():
 			return 8
 		"laser": 
 			return 3
-		"_":
+		_:
 			return 1
 	
 func remove_weapon_hitboxes():
@@ -219,12 +220,14 @@ func take_damage(damage):
 		
 		print(health, " ", damage)
 		
-		if health <= 0:
+		if health <= 0 and state != "Death":
 			state = "Death"
+			weapon = "none"
 			$Player_Sprite.change_state("Death", moving_left)
+			$CollisionShape2D.disabled = true
+			die()
 		else:
 			$Player_Sprite.hurt(moving_left)
-		
 		emit_signal("damaged", damage)
 
 func apply_knockback(enemy_pos, intensity = 25):
@@ -233,6 +236,23 @@ func apply_knockback(enemy_pos, intensity = 25):
 		last_dir = position - enemy_pos
 		speed = 25
 		print("knockback")
+		
+func die():
+	$Death_Sound.play()
+	$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, $Camera2D.zoom/2, 3.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.start()
+	
+	yield($Tween, "tween_completed")
+	
+	$UI_Layer/Transition.transition()
+	yield($UI_Layer/Transition, "done_transition")
+	
+	get_tree().reload_current_scene()
+
+func apply_knockback(enemy_pos):
+	var push_vector = enemy_pos.direction_to(self.position)
+	move_and_slide(push_vector * KNOCKBACK_AMOUNT, Vector2.UP)
+	
 
 func heal(heal_amount):
 	health += heal_amount
@@ -240,24 +260,36 @@ func heal(heal_amount):
 	emit_signal("healed", heal_amount)
 
 func attack():
-	$Player_Sprite.make_attack(weapon, get_local_mouse_position().x < 0, get_local_mouse_position())
-	match weapon:
-		"sword":
-			$Slash_Sound.play()
-		"spear":
-			$Slash_Sound.play()
-		"claws":
-			$Slash_Sound.play()
-		"shuriken":
-			$Shuriken_Sound.play()
-		"shield":
-			$Shield_Sound.play()
+	if state != "Death":
+		$Player_Sprite.make_attack(weapon, get_local_mouse_position().x < 0, get_local_mouse_position())
+		match weapon:
+			"sword":
+				$Slash_Sound.play()
+			"spear":
+				$Slash_Sound.play()
+			"claws":
+				$Slash_Sound.play()
+			"shuriken":
+				$Shuriken_Sound.play()
+			"shield":
+				$Shield_Sound.play()
 
 func level_start():
 	self.active = true
 	
 func level_end():
+	self.active = false
+	$CollisionShape2D.disabled = true
+	self.state = "Idle"
+	self.weapon = "none"
+	$Player_Sprite.change_state("Idle", moving_left)
+	
+	$Level_Win.play()
+	
+	$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, $Camera2D.zoom/1.5, 3.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.start()
+	yield($Tween, "tween_completed")
+	
 	$UI_Layer/Transition.transition()
 	yield($UI_Layer/Transition, "done_transition")
 	emit_signal("done_transitioning")
-	pass
