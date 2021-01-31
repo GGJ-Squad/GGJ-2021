@@ -5,6 +5,8 @@
 [ext_resource path="res://Enemies/MoleMen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tiles/Decals.tres" type="TileSet" id=4]
 
+
+
 [sub_resource type="NavigationPolygon" id=29]
 vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
