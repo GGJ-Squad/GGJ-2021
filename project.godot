@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="GGJ-2021"
 run/main_scene="res://Menu/Menu.tscn"
+boot_splash/image="res://boot_splash.png"
 config/icon="res://icon.png"
 
 [autoload]
