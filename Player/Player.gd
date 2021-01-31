@@ -224,7 +224,7 @@ func take_damage(damage):
 			state = "Death"
 			weapon = "none"
 			$Player_Sprite.change_state("Death", moving_left)
-			$CollisionShape2D.disabled = true
+			$CollisionShape2D.position = Vector2(10000, 10000)
 			die()
 		else:
 			$Player_Sprite.hurt(moving_left)
@@ -279,11 +279,12 @@ func level_start():
 	
 func level_end():
 	self.active = false
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.position = Vector2(10000, 10000)
 	self.state = "Idle"
 	self.weapon = "none"
 	$Player_Sprite.change_state("Idle", moving_left)
 	
+	get_parent().get_node("Music").playing = false
 	$Level_Win.play()
 	
 	$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, $Camera2D.zoom/1.5, 3.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
