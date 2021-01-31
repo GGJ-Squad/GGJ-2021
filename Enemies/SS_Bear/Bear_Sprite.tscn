@@ -20,6 +20,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Move",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 3 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Idle",
@@ -34,17 +39,11 @@ animations = [ {
 "loop": true,
 "name": "Attack",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Move",
-"speed": 12.0
 } ]
 
 [node name="Bear_Sprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "Move"
-frame = 1
 playing = true
 script = ExtResource( 17 )
 [connection signal="animation_finished" from="." to="." method="_on_Bear_Sprite_animation_finished"]
