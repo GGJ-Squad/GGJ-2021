@@ -13,6 +13,6 @@ visible = false
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-zoom = Vector2( 2, 2 )
+[node name="Cover" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
