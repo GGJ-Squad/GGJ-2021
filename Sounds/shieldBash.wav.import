@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/shieldBash.wav-af61d7c85be4e566f158a12a2932d71e.sample"
+path="res://.import/shieldBash.wav-8a4e5f131a3c789ba934311d6fda1f37.sample"
 
 [deps]
 
-source_file="res://shieldBash.wav"
-dest_files=[ "res://.import/shieldBash.wav-af61d7c85be4e566f158a12a2932d71e.sample" ]
+source_file="res://Sounds/shieldBash.wav"
+dest_files=[ "res://.import/shieldBash.wav-8a4e5f131a3c789ba934311d6fda1f37.sample" ]
 
 [params]
 
