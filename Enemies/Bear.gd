@@ -28,6 +28,7 @@ var run = false
 var moving_left = false
 var previous_x
 var chance = 0
+var attack_sound_delay = 0
 
 onready var target = get_tree().get_nodes_in_group("Players")[0]
 
@@ -94,7 +95,12 @@ func alert(delta):
 
 func attack(delta):
 		$Bear_Sprite.change_state("Attack", moving_left)
-		$Bear_Attack.play()
+		if attack_sound_delay == 0:
+			$Bear_Attack.play()
+		if attack_sound_delay >= 2:
+			attack_sound_delay = 0
+		attack_sound_delay+=delta
+		
 		run = true
 		run_timer.start()
 func _on_Ai_state_changed(state,body):

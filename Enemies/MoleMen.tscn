@@ -44,7 +44,7 @@ one_shot = true
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="Mole_Sprite" parent="." instance=ExtResource( 4 )]
-frame = 3
+frame = 1
 
 [node name="Mole_Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )

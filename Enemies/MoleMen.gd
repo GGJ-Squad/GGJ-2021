@@ -26,6 +26,7 @@ var damage = 1
 var moving_left = false
 var previous_x
 var chance = 0
+var attack_sound_delay = 0
 
 onready var target = get_tree().get_nodes_in_group("Players")[0]
 
@@ -87,7 +88,11 @@ func attack(delta):
 		target.apply_knockback(actor.position)
 		target.take_damage(damage)
 		$Mole_Sprite.change_state("Attack", moving_left)
-		$Mole_Slash.play()
+		if attack_sound_delay == 0:
+			$Mole_Slash.play()
+		if attack_sound_delay >= 2:
+			attack_sound_delay = 0
+		attack_sound_delay+=delta
 
 
 func _on_Ai_state_changed(state,body):
