@@ -48,7 +48,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="Bear_Sprite" parent="." instance=ExtResource( 3 )]
-frame = 3
+frame = 1
 
 [node name="Bear_Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
@@ -56,7 +56,6 @@ stream = ExtResource( 4 )
 [node name="Bear_Attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 [connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
-[connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 [connection signal="state_changed" from="Ai" to="." method="_on_Ai_state_changed"]
 [connection signal="timeout" from="WanderTimer" to="." method="_on_WanderTimer_timeout"]
 [connection signal="timeout" from="RaycastTimer" to="." method="_on_RaycastTimer_timeout"]
