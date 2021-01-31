@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/shurikenLand1.wav-fcfa4ce765fcc343cf924277be27bec1.sample"
+path="res://.import/shurikenLand1.wav-60849315577a7a43e2cdb63bebac2490.sample"
 
 [deps]
 
-source_file="res://shurikenLand1.wav"
-dest_files=[ "res://.import/shurikenLand1.wav-fcfa4ce765fcc343cf924277be27bec1.sample" ]
+source_file="res://Sounds/shurikenLand1.wav"
+dest_files=[ "res://.import/shurikenLand1.wav-60849315577a7a43e2cdb63bebac2490.sample" ]
 
 [params]
 
