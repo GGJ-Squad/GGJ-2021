@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Grenade.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Player/Flamethrower.gd" type="Script" id=10]
 [ext_resource path="res://Player/Laser.gd" type="Script" id=11]
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Player/Sprites/SS_Player_Shadow.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.32492, 4.70547 )
@@ -26,10 +27,14 @@ current = true
 zoom = Vector2( 0.2, 0.2 )
 smoothing_enabled = true
 
+[node name="Shadow" type="Sprite" parent="."]
+position = Vector2( 0, 8.18949 )
+texture = ExtResource( 13 )
+
 [node name="Player_Sprite" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0.125, -0.25 )
 animation = "Idle"
-frame = 2
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.111362, 9.34992 )
