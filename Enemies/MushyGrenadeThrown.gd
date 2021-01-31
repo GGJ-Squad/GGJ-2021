@@ -38,6 +38,7 @@ func _process(delta):
 			area.add_child(col_shape)
 			$Sprite.visible = false
 			$Grenade_Particles.emitting = true
+			$Explosion.play()
 			spawned_area = true
 			area_exists = true
 			area.connect("body_entered",self,"player_damage")
