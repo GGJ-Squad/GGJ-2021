@@ -1,4 +1,4 @@
-extends Node2D
+extends AnimatedSprite
 
 var state = "Idle"
 var is_flipped = false
