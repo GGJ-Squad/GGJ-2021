@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "shield"
+var weapon = "sword"
 
 var health = 16
 signal damaged(damage_amount)
@@ -32,11 +32,14 @@ var distance_travelled = 0
 var invulnerable = 0
 const inv_time = 0.8
 
-var active = true
+var step_timer = 0.5
+
+var active = false
 
 func _ready():
 	self.connect("damaged", $UI_Layer/UI/Heart_Controller, "damage")
 	self.connect("healed", $UI_Layer/UI/Heart_Controller, "heal")
+	$UI_Layer/Light2D.visible = true
 	rescale_camera()
 
 func rescale_camera():
@@ -47,6 +50,10 @@ func rescale_camera():
 func _process(delta):
 	if active and state != "Death": movement(delta)
 	
+	if state == "Move":
+		step_timer -= delta
+	if step_timer <= 0:
+		play_step_sound()
 	invulnerable = max(0, invulnerable - delta)
 
 func movement(delta):
@@ -115,6 +122,11 @@ func movement(delta):
 	
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+
+func play_step_sound():
+	step_timer = 0.35
+	var random_sound_index = randi() % 3 + 1
+	get_node("Step" + str(random_sound_index)).play()
 
 func change_weapon(new_weapon):
 	weapon = new_weapon
@@ -198,3 +210,6 @@ func heal(heal_amount):
 
 func attack():
 	$Player_Sprite.make_attack(weapon, get_local_mouse_position().x < 0, get_local_mouse_position())
+
+func level_start():
+	self.active = true
