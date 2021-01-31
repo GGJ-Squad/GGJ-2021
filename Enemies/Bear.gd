@@ -162,11 +162,6 @@ func _on_Hurtbox_area_entered(area):
 			queue_free()
 
 
-func _on_Hurtbox_body_entered(body):
-	if body.is_in_group("Players"):
-		target.apply_knockback(actor.position)
-
-
 func _on_RaycastTimer_timeout():
 	if state == "Wander":
 		state = "Alert"

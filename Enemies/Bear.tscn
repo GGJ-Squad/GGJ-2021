@@ -48,7 +48,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="Bear_Sprite" parent="." instance=ExtResource( 3 )]
-frame = 1
+frame = 3
 
 [node name="Bear_Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )

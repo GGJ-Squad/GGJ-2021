@@ -50,7 +50,7 @@ animations = [ {
 [node name="Turtle_Sprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "RunAttack"
-frame = 2
+frame = 1
 playing = true
 script = ExtResource( 18 )
 [connection signal="animation_finished" from="." to="." method="_on_Turtle_Sprite_animation_finished"]

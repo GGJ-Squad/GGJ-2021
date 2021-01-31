@@ -11,7 +11,7 @@ var rotate
 var patrol_location: Vector2 = Vector2.ZERO
 var patrol_location_reached = false
 var actor_velocity: Vector2= Vector2.ZERO
-var speed = 70
+var speed = 60
 var path = []
 var state ="Wander"
 var wander_range = 64
@@ -57,6 +57,7 @@ func _process(delta):
 		elif dir_x < 0:
 			moving_left = false
 		$Turtle_Sprite.change_state("Move", moving_left)
+#		print(state)
 	else:
 		$Turtle_Sprite.change_state("Idle", moving_left)
 func wander(delta):
@@ -85,7 +86,7 @@ func alert(delta):
 func attack(delta):
 		target.apply_knockback(actor.position)
 		target.take_damage(damage)
-		$Turtle_Sprite.change_state("Attack", moving_left)
+		$Turtle_Sprite.change_state("RunAttack", moving_left)
 
 
 func _on_Ai_state_changed(state,body):
@@ -103,6 +104,7 @@ func _on_Ai_state_changed(state,body):
 		_update_navigation_path(actor.position, player_last_seen)
 		patrol_location_reached = false
 		player_detected = false
+	elif state == "Alert":
 		if chance <= 0:
 			$Turtle_Sound.play()
 			chance = rand_range(2,4)
@@ -146,6 +148,7 @@ func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
 		$Turtle_Sprite.change_state("Hurt", moving_left)
 		health -= target.get_weapon_damage()
+		print("health")
 		if health <= 0:
 			target.change_weapon(weapon)
 			queue_free()
