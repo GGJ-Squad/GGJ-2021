@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/playerHurt.wav-4c738f393135f4ec3302f0bfda34cc6a.sample"
+path="res://.import/playerHurt.wav-45b2c1c7ff9a7e755b6996cc68fc8c5d.sample"
 
 [deps]
 
-source_file="res://playerHurt.wav"
-dest_files=[ "res://.import/playerHurt.wav-4c738f393135f4ec3302f0bfda34cc6a.sample" ]
+source_file="res://Sounds/playerHurt.wav"
+dest_files=[ "res://.import/playerHurt.wav-45b2c1c7ff9a7e755b6996cc68fc8c5d.sample" ]
 
 [params]
 

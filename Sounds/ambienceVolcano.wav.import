@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/ambienceVolcano.wav-a807772f9d678bd60e0e3a46db7d34a7.sample"
+path="res://.import/ambienceVolcano.wav-c0a64c46a024835c9db0123554d41efb.sample"
 
 [deps]
 
-source_file="res://ambienceVolcano.wav"
-dest_files=[ "res://.import/ambienceVolcano.wav-a807772f9d678bd60e0e3a46db7d34a7.sample" ]
+source_file="res://Sounds/ambienceVolcano.wav"
+dest_files=[ "res://.import/ambienceVolcano.wav-c0a64c46a024835c9db0123554d41efb.sample" ]
 
 [params]
 

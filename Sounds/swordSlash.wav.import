@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/swordSlash.wav-d72e46d012ee553037814a2ffdaf6f9c.sample"
+path="res://.import/swordSlash.wav-2409a54e6d698f4bd94d062205a3abf3.sample"
 
 [deps]
 
-source_file="res://swordSlash.wav"
-dest_files=[ "res://.import/swordSlash.wav-d72e46d012ee553037814a2ffdaf6f9c.sample" ]
+source_file="res://Sounds/swordSlash.wav"
+dest_files=[ "res://.import/swordSlash.wav-2409a54e6d698f4bd94d062205a3abf3.sample" ]
 
 [params]
 
