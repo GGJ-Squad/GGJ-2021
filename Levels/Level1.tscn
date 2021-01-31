@@ -535,7 +535,7 @@ position = Vector2( 115.593, 100.481 )
 position = Vector2( 412.144, -6.49864 )
 
 [node name="Mole Man8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1026.63, 385.503 )
+position = Vector2( 1036.94, 376.782 )
 
 [node name="Mole Man5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 951.331, 116.26 )
@@ -544,7 +544,7 @@ position = Vector2( 951.331, 116.26 )
 position = Vector2( 1028.06, 25.7785 )
 
 [node name="Mole Man7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1307.97, 123.668 )
+position = Vector2( 1360.89, 157.056 )
 
 [node name="Mole Man2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 249.477, 12.5014 )
@@ -556,13 +556,13 @@ position = Vector2( 420.782, 81.6906 )
 position = Vector2( 470.807, -3.88736 )
 
 [node name="Bear" parent="." instance=ExtResource( 8 )]
-position = Vector2( 638.442, -67.4627 )
+position = Vector2( 645.934, -70.8339 )
 
 [node name="Bear2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 723.905, 312.531 )
 
 [node name="Bear3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1355.69, 173.369 )
+position = Vector2( 1310.54, 113.733 )
 
 [node name="Bear4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1381.62, -8.65271 )
