@@ -78,7 +78,7 @@ func move_along_path(distance):
 	while path.size():
 		var distance_between_points = last_point.distance_to(path[0])
 		if distance <= distance_between_points:
-			actor.position = last_point.linear_interpolate(path[0], distance / distance_between_points)
+			actor.move_and_slide(actor.position.direction_to(path[0])*speed)
 			return
 		# The position is past the end of the segment.
 		distance -= distance_between_points
