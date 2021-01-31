@@ -37,6 +37,7 @@ func _process(delta):
 			
 			$Sprite.visible = false
 			$Grenade_Particles.emitting = true
+			$Explosion.play()
 			area_exists = true
 			
 			add_child(area)
