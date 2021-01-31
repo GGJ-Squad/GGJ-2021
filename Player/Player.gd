@@ -6,6 +6,7 @@ var max_speed = 100
 var weapon = "sword"
 
 var health = 16
+const MAX_HEALTH = 16
 signal damaged(damage_amount)
 signal healed(heal_amount)
 signal done_transitioning
@@ -34,6 +35,7 @@ var invulnerable = 0
 const inv_time = 0.8
 
 var step_timer = 0.5
+var regen_timer = 5.0
 
 var active = false
 
@@ -55,6 +57,14 @@ func _process(delta):
 		step_timer -= delta
 	if step_timer <= 0:
 		play_step_sound()
+	
+	$Label.text = str(health)
+	if health < MAX_HEALTH:
+		regen_timer -= delta
+	if regen_timer <= 0:
+		heal(1)
+		regen_timer = 5.0
+	
 	invulnerable = max(0, invulnerable - delta)
 
 func movement(delta):
@@ -135,18 +145,32 @@ func change_weapon(new_weapon):
 	charging = false
 	
 	remove_weapon_hitboxes()
+	$UI_Layer/UI/Weapon.change_weapon(new_weapon)
+	$Weapon_Switch.play()
 
 func get_weapon_damage():
-	if weapon == "sword": return 30
-	if weapon == "shield": return 10
-	if weapon == "claws": return 8
-	if weapon == "spear": return 35
-	if weapon == "shuriken": return 12
-	if weapon == "grenade": return 50
-	if weapon == "trail": return 4
-	if weapon == "flamethrower": return 8
-	if weapon == "laser": return 3
-	return 1
+	get_node("Hurt_Enemy" + str(randi() % 2)).play()
+	match weapon:
+		"sword": 
+			return 30
+		"shield": 
+			return 10
+		"claws": 
+			return 8
+		"spear": 
+			return 35
+		"shuriken": 
+			return 12
+		"grenade": 
+			return 50
+		"trail": 
+			return 4
+		"flamethrower": 
+			return 8
+		"laser": 
+			return 3
+		"_":
+			return 1
 	
 func remove_weapon_hitboxes():
 	for c in get_children():

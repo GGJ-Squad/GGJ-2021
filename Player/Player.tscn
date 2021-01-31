@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Player/Grenade.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -20,6 +20,10 @@
 [ext_resource path="res://Sounds/stepStone1.wav" type="AudioStream" id=18]
 [ext_resource path="res://Sounds/shurikenThrow1.wav" type="AudioStream" id=19]
 [ext_resource path="res://Sounds/swordSlash.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sounds/weaponPickup.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sounds/playerHurt.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sounds/bloodSplat2.wav" type="AudioStream" id=23]
+[ext_resource path="res://Sounds/bloodSplat1.wav" type="AudioStream" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.32492, 4.70547 )
@@ -41,7 +45,6 @@ texture = ExtResource( 13 )
 [node name="Player_Sprite" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0.125, -0.25 )
 animation = "Idle"
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.111362, 9.34992 )
@@ -114,3 +117,15 @@ stream = ExtResource( 20 )
 stream = ExtResource( 19 )
 
 [node name="Shield_Sound" type="AudioStreamPlayer" parent="."]
+
+[node name="Weapon_Switch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+
+[node name="Hurt_Enemy0" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+
+[node name="Hurt_Enemy1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+
+[node name="Hurt_Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
