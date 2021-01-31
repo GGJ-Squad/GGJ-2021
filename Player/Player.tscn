@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Player/Grenade.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Sounds/bloodSplat1.wav" type="AudioStream" id=24]
 [ext_resource path="res://Music/Complete.ogg" type="AudioStream" id=25]
 [ext_resource path="res://Music/Defeat.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Sounds/flameBurst.wav" type="AudioStream" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.32492, 4.70547 )
@@ -121,6 +122,9 @@ stream = ExtResource( 20 )
 stream = ExtResource( 19 )
 
 [node name="Shield_Sound" type="AudioStreamPlayer" parent="."]
+
+[node name="Flamethrower_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
 
 [node name="Weapon_Switch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/mushAlert2.wav-93ab91b458c2f33c3fbc4dba9a6b59a1.sample"
+path="res://.import/mushAlert2.wav-d69d4a6fd1de72b8cca418ed7d0c0318.sample"
 
 [deps]
 
-source_file="res://mushAlert2.wav"
-dest_files=[ "res://.import/mushAlert2.wav-93ab91b458c2f33c3fbc4dba9a6b59a1.sample" ]
+source_file="res://Sounds/mushAlert2.wav"
+dest_files=[ "res://.import/mushAlert2.wav-d69d4a6fd1de72b8cca418ed7d0c0318.sample" ]
 
 [params]
 
