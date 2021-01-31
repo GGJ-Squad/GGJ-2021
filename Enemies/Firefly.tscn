@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemies/SS_Firefly/Firefly_Sprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Ai.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Firefly.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/firefly.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.04858, 6.5611 )
@@ -41,16 +42,11 @@ one_shot = true
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
-[node name="Label" type="Label" parent="."]
-margin_left = -19.2708
-margin_top = -22.8103
-margin_right = 20.7292
-margin_bottom = -8.81029
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Firefly_Sprite" parent="." instance=ExtResource( 1 )]
+frame = 2
+
+[node name="Firefly_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 [connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 [connection signal="state_changed" from="Ai" to="." method="_on_Ai_state_changed"]
