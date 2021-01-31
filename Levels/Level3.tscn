@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Tiles/Decals.tres" type="TileSet" id=1]
 [ext_resource path="res://Tiles/SS_Cave_Water_Base.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level_End_Area.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/Turtle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/Lizard.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Bear.tscn" type="PackedScene" id=8]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -380,10 +382,76 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 72.5, 46.5 )
+position = Vector2( 70.3787, 54.6317 )
 
 [node name="Level_End_Area" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1463.88, -647.866 )
 
 [node name="Turtle" parent="." instance=ExtResource( 6 )]
 position = Vector2( 253.011, 228.655 )
+
+[node name="Lizard" parent="." instance=ExtResource( 7 )]
+position = Vector2( 394.795, 210.28 )
+
+[node name="Bear" parent="." instance=ExtResource( 8 )]
+position = Vector2( 233.402, -137.832 )
+
+[node name="Turtle2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 288.494, -213.054 )
+
+[node name="Turtle3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 757.836, 304.759 )
+
+[node name="Turtle4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1020.85, 300.256 )
+
+[node name="Turtle5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 635.277, -354.729 )
+
+[node name="Turtle6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1255.65, -5.49722 )
+
+[node name="Turtle7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1304.64, -514.627 )
+
+[node name="Lizard2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 813.206, 345.368 )
+
+[node name="Lizard3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 711.736, -56.6224 )
+
+[node name="Lizard4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 797.649, -7.83206 )
+
+[node name="Bear2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1166.25, 50 )
+
+[node name="Turtle8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1093.39, -453.363 )
+
+[node name="Turtle9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1294.67, -313.334 )
+
+[node name="Lizard5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1204.88, -433.741 )
+
+[node name="Lizard8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1420.39, -602.411 )
+
+[node name="Lizard10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1387.18, -575.503 )
+
+[node name="Lizard6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 524.469, -283.455 )
+
+[node name="Bear3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 769.523, 107.436 )
+
+[node name="Lizard7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1194.43, -83.6761 )
+
+[node name="Bear4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 580.746, -326.241 )
+
+[node name="Lizard9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 763.324, -64.9179 )
