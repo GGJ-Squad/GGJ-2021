@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mushroom.ogg-e628d24c218c5394e3360f76830b86b7.oggstr"
+
+[deps]
+
+source_file="res://Music/Mushroom.ogg"
+dest_files=[ "res://.import/Mushroom.ogg-e628d24c218c5394e3360f76830b86b7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
