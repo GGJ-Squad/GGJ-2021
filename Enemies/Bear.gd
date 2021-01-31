@@ -17,13 +17,14 @@ var state ="Wander"
 var wander_range = 200
 onready var wander_timer = $WanderTimer
 onready var raycast_timer = $RaycastTimer
+onready var run_timer = $RunTimer
 onready var raycast = $RayCast2D
 onready var nav = get_parent().get_node("LevelNav")
 var player_last_seen
 var player_detected = false
 var body
 var damage = 1
-
+var run = false
 
 onready var target = get_tree().get_nodes_in_group("Players")[0]
 
@@ -39,13 +40,17 @@ func _ready():
 	patrol_location_reached = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if state == "Wander":
-		wander(delta)
-	elif state == "Alert":
-		alert(delta)
-	elif state == "Attack":
-		attack(delta)
+	if not run:
+		if state == "Wander":
+			wander(delta)
+		elif state == "Alert":
+			alert(delta)
+		elif state == "Attack":
+			attack(delta)
+	else:
+		_update_navigation_path(actor.position, (target.global_position - actor.global_position)*-1+actor.global_position)
 		
+	
 	if patrol_location_reached == false:
 		move_along_path(speed*delta)
 #		print(state)
@@ -59,7 +64,7 @@ func wander(delta):
 		
 
 func alert(delta):
-	raycast.cast_to = target.global_position - actor.global_position
+	raycast.cast_to = target.global_position - actor.global_position+Vector2(0,8)
 	raycast.cast_to *= 1.5
 	raycast.force_raycast_update()
 #	print(raycast.get_collider())
@@ -75,8 +80,8 @@ func alert(delta):
 
 func attack(delta):
 		target.take_damage(damage)
-
-
+		run = true
+		run_timer.start()
 func _on_Ai_state_changed(state,body):
 	self.state = state
 	self.body = body
@@ -143,3 +148,7 @@ func _on_Hurtbox_body_entered(body):
 func _on_RaycastTimer_timeout():
 	if state == "Wander":
 		state = "Alert"
+
+
+func _on_RunTimer_timeout():
+	run = false

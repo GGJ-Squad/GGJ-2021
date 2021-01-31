@@ -31,7 +31,7 @@ onready var target = get_tree().get_nodes_in_group("Players")[0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("Ai/Alert/CollisionShape2D").shape.radius = 65
+	get_node("Ai/Alert/CollisionShape2D").shape.radius = 75
 	get_node("Ai/Attack Range/CollisionShape2D").shape.radius =30
 	randomize()
 	var random_x = rand_range(-wander_range,wander_range)
@@ -62,13 +62,22 @@ func wander(delta):
 
 func alert(delta):
 	if not cooldown:
-		var inst = load("Enemies/MushyGrenade.tscn").instance()
-		inst.dir = actor.position.direction_to(target.position)
-		inst.position = actor.position
-		inst.start(target)
-		get_parent().add_child(inst)
-		cooldown_timer.start()
-		cooldown = true
+		raycast.cast_to = target.global_position - actor.global_position+Vector2(0,8)
+		raycast.cast_to *= 1.5
+		raycast.force_raycast_update()
+		if raycast.get_collider() == target or player_detected:
+			player_detected = true
+			var inst = load("Enemies/MushyGrenade.tscn").instance()
+			inst.dir = actor.position.direction_to(target.position)
+			inst.position = actor.position
+			inst.start(target)
+			get_parent().add_child(inst)
+			cooldown_timer.start()
+			cooldown = true
+		else:
+			raycast_timer.start()
+			state = "Wander"
+		
 
 func attack(delta):
 	_update_navigation_path(actor.position, (target.global_position - actor.global_position)*-1+actor.global_position)
