@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tiles/Decals.tres" type="TileSet" id=1]
 [ext_resource path="res://Tiles/SS_Cave_Lush_Base.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Music/Jungle.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Levels/Level_End_Area.tscn" type="PackedScene" id=5]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -323,7 +324,7 @@ points = PoolVector2Array( 16, 15.9181, 0.144451, 15.9181, 0.144451, 7.96718, 16
 9/shapes = [  ]
 9/z_index = 0
 
-[node name="Root" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
@@ -352,3 +353,6 @@ autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 117.179, 85.6497 )
+
+[node name="Level_End_Area" parent="." instance=ExtResource( 5 )]
+position = Vector2( 968.464, 694.29 )
