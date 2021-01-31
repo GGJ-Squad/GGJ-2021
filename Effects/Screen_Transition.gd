@@ -1,17 +1,26 @@
 extends Node2D
 
+signal done_untransition
+
 var square
+var player
 var going = false
 
-const SCALE = 64
+const X_SIZE = 480
+const Y_SIZE = 270
+
+const SCALE = 32
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player = get_parent().get_parent()
+	self.connect("done_untransition", player, "level_start")
 	square = $Square
+	$Cover.scale = Vector2(X_SIZE, Y_SIZE)
 
 func _input(event):
 	if event is InputEventKey and not going:
-		transition()
+		untransition()
 		going = true
 
 func transition():
@@ -19,13 +28,13 @@ func transition():
 	while true:
 		var y_index = y
 		var x_index = 0
-		if y > (1080 / SCALE):
-			x_index = y - (1080 / SCALE)
-			y_index = (1080 / SCALE)
-		if x_index >= 1920 / SCALE:
+		if y > (Y_SIZE / SCALE):
+			x_index = y - (Y_SIZE / SCALE)
+			y_index = (Y_SIZE / SCALE)
+		if x_index >= X_SIZE / SCALE:
 			break
 		while(y_index >= 0):
-			if x_index * SCALE >= 1920:
+			if x_index * SCALE >= X_SIZE:
 				break
 			spawn_square(x_index * SCALE, y_index * SCALE)
 			y_index -= 1
@@ -34,18 +43,19 @@ func transition():
 		y += 1
 
 func untransition():
+	$Cover.visible = false
 	var y = 0
 	var delay = 0
 	while true:
 		var y_index = y
 		var x_index = 0
-		if y > (1080 / SCALE):
-			x_index = y - (1080 / SCALE)
-			y_index = (1080 / SCALE)
-		if x_index >= 1920 / SCALE:
+		if y > (Y_SIZE / SCALE):
+			x_index = y - (Y_SIZE / SCALE)
+			y_index = (Y_SIZE / SCALE)
+		if x_index >= X_SIZE / SCALE:
 			break
 		while(y_index >= 0):
-			if x_index * SCALE >= 1920:
+			if x_index * SCALE >= X_SIZE:
 				break
 			var new_square = square.duplicate()
 			new_square.position = Vector2(x_index * SCALE + SCALE/2, y_index * SCALE + SCALE/2)
@@ -60,7 +70,8 @@ func untransition():
 			x_index += 1
 		delay += 0.01
 		y += 1
-
+	yield($Tween, "tween_all_completed")
+	emit_signal("done_untransition")
 
 func spawn_square(x, y):
 	var new_square = square.duplicate()

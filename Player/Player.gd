@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "shield"
+var weapon = "sword"
 
 var health = 16
 signal damaged(damage_amount)
@@ -32,11 +32,12 @@ var distance_travelled = 0
 var invulnerable = 0
 const inv_time = 0.8
 
-var active = true
+var active = false
 
 func _ready():
 	self.connect("damaged", $UI_Layer/UI/Heart_Controller, "damage")
 	self.connect("healed", $UI_Layer/UI/Heart_Controller, "heal")
+	$UI_Layer/Light2D.visible = true
 	rescale_camera()
 
 func rescale_camera():
@@ -198,3 +199,6 @@ func heal(heal_amount):
 
 func attack():
 	$Player_Sprite.make_attack(weapon, get_local_mouse_position().x < 0, get_local_mouse_position())
+
+func level_start():
+	self.active = true
