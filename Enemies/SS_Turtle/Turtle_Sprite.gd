@@ -13,12 +13,12 @@ func _ready():
 func change_state(state, flipped):
 	self.state = state
 	self.flip_h = flipped
-	if state == "Attack" and not is_attacking:
+	if state == "RunAttack" and not is_attacking:
 		is_attacking = true
 	elif state == "Hurt" and not is_hurting:
 		is_hurting = true
 	if is_attacking:
-		self.animation = "Attack"
+		self.animation = "RunAttack"
 	elif is_hurting:
 		self.animation = "Hurt"
 	else:
@@ -27,7 +27,7 @@ func change_state(state, flipped):
 	
 
 func _on_Turtle_Sprite_animation_finished():
-	if self.animation == "Attack":
+	if self.animation == "RunAttack":
 		is_attacking=false
 		self.state = "Move"
 		self.animation = state
