@@ -157,7 +157,7 @@ func get_weapon_damage():
 		"sword": 
 			return 30
 		"shield": 
-			return 10
+			return 20
 		"claws": 
 			return 16
 		"spear": 
