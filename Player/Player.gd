@@ -230,12 +230,12 @@ func take_damage(damage):
 			$Player_Sprite.hurt(moving_left)
 		emit_signal("damaged", damage)
 
-func apply_knockback(enemy_pos, intensity = 25):
+func apply_knockback(enemy_pos, intensity = 20):
 	if invulnerable == 0:
 		stun = 0.2
 		last_dir = position - enemy_pos
-		speed = 25
-		print("knockback")
+		speed = intensity
+		speed_dampening_multiplier = 3
 		
 func die():
 	$Death_Sound.play()
@@ -249,9 +249,9 @@ func die():
 	
 	get_tree().reload_current_scene()
 
-func apply_knockback(enemy_pos):
-	var push_vector = enemy_pos.direction_to(self.position)
-	move_and_slide(push_vector * KNOCKBACK_AMOUNT, Vector2.UP)
+#func apply_knockback(enemy_pos):
+#	var push_vector = enemy_pos.direction_to(self.position)
+#	move_and_slide(push_vector * KNOCKBACK_AMOUNT, Vector2.UP)
 	
 
 func heal(heal_amount):
