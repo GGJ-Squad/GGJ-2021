@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu/Menu_Font.tres" type="DynamicFont" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 534.667
+margin_top = 268.0
+margin_right = 1317.67
+margin_bottom = 322.0
+custom_fonts/font = ExtResource( 1 )
+text = "Congratulations!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 524.576
+margin_top = 440.664
+margin_right = 1307.58
+margin_bottom = 551.664
+custom_fonts/font = ExtResource( 1 )
+text = "You got the 
+golden treasure"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 1223.82
+margin_top = 52.1943
+margin_right = 2006.82
+margin_bottom = 790.194
+custom_fonts/font = ExtResource( 1 )
+text = "Made by
+
+
+
+
+
+Christopher
+
+Kyle
+
+Noah
+
+Tim"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = -85.6749
+margin_top = 52.1943
+margin_right = 697.325
+margin_bottom = 790.194
+custom_fonts/font = ExtResource( 1 )
+text = "Made by
+
+
+
+
+
+Ben
+
+Emma
+
+Kaitlyn
+
+Sean"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 757.543
+margin_top = 910.211
+margin_right = 1077.54
+margin_bottom = 1013.21
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
