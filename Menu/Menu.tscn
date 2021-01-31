@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Menu/Start_Button.gd" type="Script" id=1]
 [ext_resource path="res://Music/Title.ogg" type="AudioStream" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Tiles/SS_CaveNormal.png" type="Texture" id=6]
 [ext_resource path="res://Menu/Gamer.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Player/Player_Sprite.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Menu/GUI_Button.png" type="Texture" id=9]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -586,5 +587,16 @@ __meta__ = {
 [node name="Menu_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_left = 675.0
+margin_top = 504.0
+margin_right = 1259.0
+margin_bottom = 677.0
+texture = ExtResource( 9 )
+region_rect = Rect2( -1.80591, -1.80484, 99.444, 98.7629 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Control/Start_Button" to="Control/Start_Button" method="_on_Start_Button_pressed"]
 [connection signal="pressed" from="Control/Quit_Button" to="Control/Quit_Button" method="_on_Quit_Button_pressed"]
