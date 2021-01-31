@@ -159,7 +159,7 @@ func get_weapon_damage():
 		"shield": 
 			return 10
 		"claws": 
-			return 8
+			return 16
 		"spear": 
 			return 35
 		"shuriken": 
