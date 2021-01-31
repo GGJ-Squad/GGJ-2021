@@ -162,7 +162,6 @@ func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
 		health -= target.get_weapon_damage()
 		$Bear_Sprite.change_state("Hurt", moving_left)
-		print("health")
 		if health <= 0:
 			target.change_weapon(weapon)
 			queue_free()

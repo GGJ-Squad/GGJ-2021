@@ -61,7 +61,6 @@ func _process(delta):
 		elif dir_x < 0:
 			moving_left = false
 		$Mushroom_Sprite.change_state("Move", moving_left)
-#		print(state)
 	else:
 		$Mushroom_Sprite.change_state("Idle", moving_left)
 func wander(delta):
@@ -163,7 +162,6 @@ func _on_Hurtbox_area_entered(area):
 		health -= target.get_weapon_damage()
 		$Mush_Hurt.play()
 		$Mushroom_Sprite.change_state("Hurt", moving_left)
-		print("health")
 		if health <= 0:
 			target.change_weapon(weapon)
 			queue_free()

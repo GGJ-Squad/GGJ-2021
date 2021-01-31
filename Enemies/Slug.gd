@@ -62,7 +62,6 @@ func _process(delta):
 		elif dir_x < 0:
 			moving_left = false
 		$Worm_Sprite.change_state("Move", moving_left)
-#		print(state)
 	else:
 		$Worm_Sprite.change_state("Idle", moving_left)
 func wander(delta):
@@ -111,7 +110,6 @@ func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
 		health -= target.get_weapon_damage()
 		$Worm_Sprite.change_state("Hurt", moving_left)
-		print("health")
 		if health <= 0:
 			target.change_weapon(weapon)
 			queue_free()

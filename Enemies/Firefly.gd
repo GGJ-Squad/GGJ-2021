@@ -148,7 +148,6 @@ func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
 		$Firefly_Sprite.change_state("Hurt", moving_left)
 		health -= target.get_weapon_damage()
-		print("health")
 		if health <= 0:
 			target.change_weapon(weapon)
 			queue_free()

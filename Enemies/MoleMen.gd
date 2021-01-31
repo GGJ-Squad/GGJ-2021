@@ -58,7 +58,6 @@ func _process(delta):
 		elif dir_x < 0:
 			moving_left = false
 		$Mole_Sprite.change_state("Move", moving_left)
-#		print(state)
 	else:
 		$Mole_Sprite.change_state("Idle", moving_left)
 func wander(delta):
@@ -121,7 +120,6 @@ func move_along_path(distance):
 		var distance_between_points = last_point.distance_to(path[0])
 		if distance <= distance_between_points:
 			#actor.position = last_point.linear_interpolate(path[0], distance / distance_between_points)
-			print(path[0])
 			actor.move_and_slide(actor.position.direction_to(path[0])*speed)
 			return
 		# The position is past the end of the segment.
@@ -155,7 +153,7 @@ func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
 		$Mole_Sprite.change_state("Hurt", moving_left)
 		health -= target.get_weapon_damage()
-		print("health")
+		
 		if health <= 0:
 			target.change_weapon(weapon)
 			queue_free()
