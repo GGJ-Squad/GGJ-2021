@@ -7,6 +7,7 @@ var speed = 150
 var time = 1.5
 var kill = false
 var spawned_area = false
+var area_exists = false
 
 func _ready():
 	pass
@@ -31,13 +32,20 @@ func _process(delta):
 			var col_shape = CollisionShape2D.new()
 			col_shape.shape = CircleShape2D.new()
 			col_shape.shape.radius = 32
-			area.name = "weapon_area"
+			area.name = "spawned_area"
 			area.add_to_group("player_damage")
+			
+			$Sprite.visible = false
+			$Grenade_Particles.emitting = true
+			area_exists = true
 			
 			add_child(area)
 			area.add_child(col_shape)
 			spawned_area = true
-		if time < -0.1:
+		if time < -0.1 and area_exists:
+			get_node("spawned_area").queue_free()
+			area_exists = false
+		if time < -1.2:
 			kill = true
 
 func _on_Grenade_body_entered(body):

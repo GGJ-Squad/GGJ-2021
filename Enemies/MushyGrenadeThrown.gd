@@ -7,6 +7,8 @@ var player
 var time = 1.5
 var kill = false
 var spawned_area = false
+var area_exists = false
+
 func _ready():
 	print(self.position)
 
@@ -30,19 +32,27 @@ func _process(delta):
 			var col_shape = CollisionShape2D.new()
 			col_shape.shape = CircleShape2D.new()
 			col_shape.shape.radius = 32
-			#area.name = "weapon_area"
+			area.name = "spawned_area"
 			#area.add_to_group("enemy_damage")
 			add_child(area)
 			area.add_child(col_shape)
+			$Sprite.visible = false
+			$Grenade_Particles.emitting = true
 			spawned_area = true
+			area_exists = true
 			area.connect("body_entered",self,"player_damage")
-		if time < -0.1:
+		if time < -0.1 and area_exists:
+			get_node("spawned_area").queue_free()
+			area_exists = false
+		if time < -1.2:
 			kill = true
+
 func _on_Grenade_body_entered(body):
 	if not body.is_in_group("Players") and not body.is_in_group("Enemy"): speed = 0
 	
 func start(player):
 	self.player = player
+
 func player_damage(body):
 	if body.is_in_group("Players"):
 		player.apply_knockback(self.position,50)
