@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Enemies/Lizard.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/MushroomMan#2.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Ai.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 
@@ -10,7 +10,7 @@ extents = Vector2( 7.04858, 6.5611 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8.70036, 8.21288 )
 
-[node name="Lizard" type="KinematicBody2D" groups=[
+[node name="MushroomMan#2" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 script = ExtResource( 1 )
@@ -53,8 +53,13 @@ margin_bottom = -8.81029
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
 [connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 [connection signal="state_changed" from="Ai" to="." method="_on_Ai_state_changed"]
 [connection signal="timeout" from="WanderTimer" to="." method="_on_WanderTimer_timeout"]
 [connection signal="timeout" from="RaycastTimer" to="." method="_on_RaycastTimer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]
