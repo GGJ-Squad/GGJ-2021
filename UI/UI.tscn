@@ -53,7 +53,6 @@ __meta__ = {
 
 [node name="Weapon" type="Node2D" parent="."]
 position = Vector2( 27, 47 )
-z_index = 2
 
 [node name="Weapon_BG" type="Sprite" parent="Weapon"]
 texture = ExtResource( 9 )
@@ -62,7 +61,6 @@ texture = ExtResource( 9 )
 texture = ExtResource( 8 )
 
 [node name="Heart_Controller" type="Node2D" parent="."]
-z_index = 2
 script = ExtResource( 7 )
 
 [node name="Heart0" type="AnimatedSprite" parent="Heart_Controller"]
