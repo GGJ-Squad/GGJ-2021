@@ -39,6 +39,8 @@ var regen_timer = 5.0
 
 var active = false
 
+var stun = 0
+
 func _ready():
 	self.connect("damaged", $UI_Layer/UI/Heart_Controller, "damage")
 	self.connect("healed", $UI_Layer/UI/Heart_Controller, "heal")
@@ -65,6 +67,7 @@ func _process(delta):
 		regen_timer = 5.0
 	
 	invulnerable = max(0, invulnerable - delta)
+	stun = max(0, stun - delta)
 
 func movement(delta):
 	var mouse_pos = get_local_mouse_position()
@@ -77,7 +80,7 @@ func movement(delta):
 		speed_dampening_multiplier = 4
 		
 		last_dir = dir
-	else:
+	elif stun == 0:
 		if Input.is_action_pressed("Up"):
 			dir.y -= 1
 		if Input.is_action_pressed("Down"):
@@ -224,8 +227,12 @@ func take_damage(damage):
 		
 		emit_signal("damaged", damage)
 
-func apply_knockback(enemy_pos):
-	pass
+func apply_knockback(enemy_pos, intensity = 25):
+	if invulnerable == 0:
+		stun = 0.2
+		last_dir = position - enemy_pos
+		speed = 25
+		print("knockback")
 
 func heal(heal_amount):
 	health += heal_amount
