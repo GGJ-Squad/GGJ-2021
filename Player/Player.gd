@@ -32,6 +32,8 @@ var distance_travelled = 0
 var invulnerable = 0
 const inv_time = 0.8
 
+var step_timer = 0.5
+
 var active = false
 
 func _ready():
@@ -48,6 +50,10 @@ func rescale_camera():
 func _process(delta):
 	if active and state != "Death": movement(delta)
 	
+	if state == "Move":
+		step_timer -= delta
+	if step_timer <= 0:
+		play_step_sound()
 	invulnerable = max(0, invulnerable - delta)
 
 func movement(delta):
@@ -116,6 +122,11 @@ func movement(delta):
 	
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+
+func play_step_sound():
+	step_timer = 0.35
+	var random_sound_index = randi() % 3 + 1
+	get_node("Step" + str(random_sound_index)).play()
 
 func change_weapon(new_weapon):
 	weapon = new_weapon
