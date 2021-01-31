@@ -1,5 +1,6 @@
 extends Node2D
 
+signal done_transition
 signal done_untransition
 
 var square
@@ -9,7 +10,7 @@ var going = false
 const X_SIZE = 480
 const Y_SIZE = 270
 
-const SCALE = 32.0
+const SCALE = 32
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,10 +18,11 @@ func _ready():
 	self.connect("done_untransition", player, "level_start")
 	square = $Square
 	$Cover.scale = Vector2(X_SIZE, Y_SIZE)
+	untransition()
 
 func _input(event):
 	if event is InputEventKey and not going:
-		untransition()
+#		untransition()
 		going = true
 
 func transition():
@@ -41,6 +43,8 @@ func transition():
 			x_index += 1
 		yield(get_tree().create_timer(0.01), "timeout")
 		y += 1
+	yield($Tween, "tween_all_completed")
+	emit_signal("done_transition")
 
 func untransition():
 	$Cover.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player/Grenade.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://Sounds/stepStone2.wav" type="AudioStream" id=16]
 [ext_resource path="res://Sounds/stepStone3.wav" type="AudioStream" id=17]
 [ext_resource path="res://Sounds/stepStone1.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sounds/shurikenThrow1.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sounds/swordSlash.wav" type="AudioStream" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.32492, 4.70547 )
@@ -104,3 +106,11 @@ stream = ExtResource( 16 )
 
 [node name="Step3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+
+[node name="Slash_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+
+[node name="Shuriken_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+
+[node name="Shield_Sound" type="AudioStreamPlayer" parent="."]

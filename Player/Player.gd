@@ -8,6 +8,7 @@ var weapon = "sword"
 var health = 16
 signal damaged(damage_amount)
 signal healed(heal_amount)
+signal done_transitioning
 
 var state = "Idle"
 
@@ -210,6 +211,23 @@ func heal(heal_amount):
 
 func attack():
 	$Player_Sprite.make_attack(weapon, get_local_mouse_position().x < 0, get_local_mouse_position())
+	match weapon:
+		"sword":
+			$Slash_Sound.play()
+		"spear":
+			$Slash_Sound.play()
+		"claws":
+			$Slash_Sound.play()
+		"shuriken":
+			$Shuriken_Sound.play()
+		"shield":
+			$Shield_Sound.play()
 
 func level_start():
 	self.active = true
+	
+func level_end():
+	$UI_Layer/Transition.transition()
+	yield($UI_Layer/Transition, "done_transition")
+	emit_signal("done_transitioning")
+	pass

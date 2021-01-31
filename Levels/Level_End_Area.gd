@@ -14,4 +14,6 @@ func _on_Level_End_Area_body_entered(body):
 	var cur_level = get_tree().get_current_scene().get_name()[-1]
 	print(cur_level)
 	if body.is_in_group("Players"):
+		body.level_end()
+		yield(body, "done_transitioning")
 		get_tree().change_scene("res://Levels/Level" + str(int(cur_level) + 1) + ".tscn")
