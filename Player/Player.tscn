@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Player/Grenade.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://Sounds/playerHurt.wav" type="AudioStream" id=22]
 [ext_resource path="res://Sounds/bloodSplat2.wav" type="AudioStream" id=23]
 [ext_resource path="res://Sounds/bloodSplat1.wav" type="AudioStream" id=24]
+[ext_resource path="res://Music/Complete.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Music/Defeat.ogg" type="AudioStream" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.32492, 4.70547 )
@@ -32,6 +34,8 @@ extents = Vector2( 6.32492, 4.70547 )
 "Players",
 ]]
 script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -129,3 +133,9 @@ stream = ExtResource( 23 )
 
 [node name="Hurt_Player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )
+
+[node name="Level_Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+
+[node name="Death_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
