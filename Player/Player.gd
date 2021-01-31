@@ -187,7 +187,10 @@ func take_damage(damage):
 			$Player_Sprite.hurt(moving_left)
 		
 		emit_signal("damaged", damage)
-	
+
+func apply_knockback(enemy_pos):
+	pass
+
 func heal(heal_amount):
 	health += heal_amount
 	
