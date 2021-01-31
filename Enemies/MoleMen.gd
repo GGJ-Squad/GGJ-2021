@@ -59,12 +59,9 @@ func wander(delta):
 		
 
 func alert(delta):
-	raycast.cast_to = target.global_position - actor.global_position
+	raycast.cast_to = target.global_position - actor.global_position+Vector2(0,8)
 	raycast.cast_to *= 1.5
 	raycast.force_raycast_update()
-#	print(raycast.get_collider())
-#	print(target)
-	print(raycast.get_collider() == target or player_detected)
 	if raycast.get_collider() == target or player_detected:
 		player_detected = true
 		_update_navigation_path(actor.position, target.global_position)

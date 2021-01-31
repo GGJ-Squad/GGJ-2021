@@ -59,7 +59,7 @@ func wander(delta):
 		
 
 func alert(delta):
-	raycast.cast_to = target.global_position - actor.global_position
+	raycast.cast_to = target.global_position - actor.global_position+Vector2(0,8)
 	raycast.cast_to *= 1.5
 	raycast.force_raycast_update()
 #	print(raycast.get_collider())
