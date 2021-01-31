@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bloodSplat2.wav-63a5436c273d5b4269cb0dcb59571f15.sample"
+path="res://.import/bloodSplat2.wav-caa705ec7e0c7ad70d753f6113ca27ab.sample"
 
 [deps]
 
-source_file="res://bloodSplat2.wav"
-dest_files=[ "res://.import/bloodSplat2.wav-63a5436c273d5b4269cb0dcb59571f15.sample" ]
+source_file="res://Sounds/bloodSplat2.wav"
+dest_files=[ "res://.import/bloodSplat2.wav-caa705ec7e0c7ad70d753f6113ca27ab.sample" ]
 
 [params]
 

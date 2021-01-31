@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/stoneBreak.wav-f13813d0e60ef47f70b106498bde9806.sample"
+path="res://.import/stoneBreak.wav-ed4c7de687ea06e7dccafd8cd6d7e2f3.sample"
 
 [deps]
 
-source_file="res://stoneBreak.wav"
-dest_files=[ "res://.import/stoneBreak.wav-f13813d0e60ef47f70b106498bde9806.sample" ]
+source_file="res://Sounds/stoneBreak.wav"
+dest_files=[ "res://.import/stoneBreak.wav-ed4c7de687ea06e7dccafd8cd6d7e2f3.sample" ]
 
 [params]
 

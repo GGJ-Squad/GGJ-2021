@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/weaponPickup.wav-d4efeec67f41ac6b4954d28e86ca3c02.sample"
+path="res://.import/weaponPickup.wav-bd59df020a922f8bd10b3d9330f08287.sample"
 
 [deps]
 
-source_file="res://weaponPickup.wav"
-dest_files=[ "res://.import/weaponPickup.wav-d4efeec67f41ac6b4954d28e86ca3c02.sample" ]
+source_file="res://Sounds/weaponPickup.wav"
+dest_files=[ "res://.import/weaponPickup.wav-bd59df020a922f8bd10b3d9330f08287.sample" ]
 
 [params]
 
