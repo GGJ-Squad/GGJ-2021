@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "sword"
+var weapon = "flamethrower"
 
 var health = 16
 const MAX_HEALTH = 16
@@ -218,8 +218,6 @@ func take_damage(damage):
 		
 		health -= damage
 		
-		print(health, " ", damage)
-		
 		if health <= 0 and state != "Death":
 			state = "Death"
 			weapon = "none"
@@ -238,6 +236,7 @@ func apply_knockback(enemy_pos, intensity = 20):
 		speed_dampening_multiplier = 3
 		
 func die():
+	get_parent().get_node("Music").playing = false
 	$Death_Sound.play()
 	$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, $Camera2D.zoom/2, 3.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()
