@@ -64,10 +64,8 @@ func _process(delta):
 		elif dir_x < 0:
 			moving_left = false
 		$Bear_Sprite.change_state("Move", moving_left)
-#		print(state)
 	else:
 		$Bear_Sprite.change_state("Idle", moving_left)
-#		print(state)
 func wander(delta):
 	if not patrol_location_reached:
 		if actor.global_position.distance_to(patrol_location) < 4:
@@ -81,9 +79,6 @@ func alert(delta):
 	raycast.cast_to = target.global_position - actor.global_position+Vector2(0,8)
 	raycast.cast_to *= 1.5
 	raycast.force_raycast_update()
-#	print(raycast.get_collider())
-#	print(target)
-	print(raycast.get_collider() == target or player_detected)
 	if raycast.get_collider() == target or player_detected:
 		player_detected = true
 		_update_navigation_path(actor.position, target.global_position)
