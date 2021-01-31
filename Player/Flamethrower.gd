@@ -23,6 +23,7 @@ func _process(delta):
 				var mouse_pos = get_parent().get_local_mouse_position()
 				
 				get_parent().create_rectangle_hurtbox(mouse_pos.normalized() * 5, mouse_pos.normalized() * 32, 18)
+				get_parent().attack()
 			elif cooldown <= 0:
 				get_parent().remove_weapon_hitboxes()
 				queue_hitbox = true

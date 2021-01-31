@@ -28,7 +28,8 @@ var damage = 2
 var cooldown = false
 var moving_left = false
 var previous_x
-
+var chance = 0
+var chance2 = 0
 
 onready var target = get_tree().get_nodes_in_group("Players")[0]
 
@@ -63,7 +64,6 @@ func _process(delta):
 #		print(state)
 	else:
 		$Mushroom_Sprite.change_state("Idle", moving_left)
-	$Label.text = state
 func wander(delta):
 	if not patrol_location_reached:
 		if actor.global_position.distance_to(patrol_location) < 4:
@@ -114,6 +114,15 @@ func _on_Ai_state_changed(state,body):
 		_update_navigation_path(actor.position, player_last_seen)
 		patrol_location_reached = false
 		player_detected = false
+		if chance2 <= 0:
+			$Mush_Cry.play()
+			chance2 = rand_range(2,4)
+		chance -= 1
+	elif state == "Alert":
+		if chance <= 0:
+			$Mush_Alert.play()
+			chance = rand_range(2,4)
+		chance -= 1
 		
 func move_along_path(distance):
 	var last_point = actor.position
@@ -152,6 +161,7 @@ func _on_WanderTimer_timeout():
 func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
 		health -= target.get_weapon_damage()
+		$Mush_Hurt.play()
 		$Mushroom_Sprite.change_state("Hurt", moving_left)
 		print("health")
 		if health <= 0:

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/spearJab.wav-da30b170f29c960af8f1fe30494e375a.sample"
+path="res://.import/flameBurst.wav-20f575fad5009f66ec44405ca4c6743c.sample"
 
 [deps]
 
-source_file="res://Sounds/spearJab.wav"
-dest_files=[ "res://.import/spearJab.wav-da30b170f29c960af8f1fe30494e375a.sample" ]
+source_file="res://Sounds/flameBurst.wav"
+dest_files=[ "res://.import/flameBurst.wav-20f575fad5009f66ec44405ca4c6743c.sample" ]
 
 [params]
 

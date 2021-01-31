@@ -218,13 +218,11 @@ func take_damage(damage):
 		
 		health -= damage
 		
-		print(health, " ", damage)
-		
 		if health <= 0 and state != "Death":
 			state = "Death"
 			weapon = "none"
 			$Player_Sprite.change_state("Death", moving_left)
-			$CollisionShape2D.disabled = true
+			$CollisionShape2D.position = Vector2(10000, 10000)
 			die()
 		else:
 			$Player_Sprite.hurt(moving_left)
@@ -238,6 +236,7 @@ func apply_knockback(enemy_pos, intensity = 20):
 		speed_dampening_multiplier = 3
 		
 func die():
+	get_parent().get_node("Music").playing = false
 	$Death_Sound.play()
 	$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, $Camera2D.zoom/2, 3.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()
@@ -273,17 +272,20 @@ func attack():
 				$Shuriken_Sound.play()
 			"shield":
 				$Shield_Sound.play()
+			"flamethrower":
+				$Flamethrower_Sound.play()
 
 func level_start():
 	self.active = true
 	
 func level_end():
 	self.active = false
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.position = Vector2(10000, 10000)
 	self.state = "Idle"
 	self.weapon = "none"
 	$Player_Sprite.change_state("Idle", moving_left)
 	
+	get_parent().get_node("Music").playing = false
 	$Level_Win.play()
 	
 	$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, $Camera2D.zoom/1.5, 3.5, Tween.TRANS_LINEAR, Tween.EASE_IN)

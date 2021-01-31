@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/spearJab.wav-da30b170f29c960af8f1fe30494e375a.sample"
+path="res://.import/moleSlash.wav-65620cd0f7ea1887f5f5047f5472cfd7.sample"
 
 [deps]
 
-source_file="res://Sounds/spearJab.wav"
-dest_files=[ "res://.import/spearJab.wav-da30b170f29c960af8f1fe30494e375a.sample" ]
+source_file="res://Sounds/moleSlash.wav"
+dest_files=[ "res://.import/moleSlash.wav-65620cd0f7ea1887f5f5047f5472cfd7.sample" ]
 
 [params]
 
