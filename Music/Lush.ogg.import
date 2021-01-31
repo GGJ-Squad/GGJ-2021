@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lush.ogg-d9fe3ce90efbc337019cd63e62082280.oggstr"
+
+[deps]
+
+source_file="res://Music/Lush.ogg"
+dest_files=[ "res://.import/Lush.ogg-d9fe3ce90efbc337019cd63e62082280.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
