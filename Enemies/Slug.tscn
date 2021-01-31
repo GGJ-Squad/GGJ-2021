@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemies/Slug.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.04858, 6.5611 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.70036, 9.11263 )
+
+[node name="Slug" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.181539, 0.187385 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Hurtbox" type="Area2D" parent="CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Hurtbox"]
+shape = SubResource( 2 )
+
+[node name="LookTimer" type="Timer" parent="."]
+
+[node name="WanderTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = -19.2708
+margin_top = -22.8103
+margin_right = 20.7292
+margin_bottom = -8.81029
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.108
+[connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
+[connection signal="timeout" from="WanderTimer" to="." method="_on_WanderTimer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]

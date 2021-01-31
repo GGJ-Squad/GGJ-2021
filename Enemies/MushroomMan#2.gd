@@ -143,7 +143,9 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Hurtbox_body_entered(body):
-	patrol_location_reached = true
+	if body.is_in_group("Players"):
+		target.apply_knockback(actor.position)
+
 
 
 func _on_RaycastTimer_timeout():
@@ -153,3 +155,4 @@ func _on_RaycastTimer_timeout():
 
 func _on_CooldownTimer_timeout():
 	cooldown=false
+	
