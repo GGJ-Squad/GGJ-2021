@@ -11,10 +11,10 @@ var rotate
 var patrol_location: Vector2 = Vector2.ZERO
 var patrol_location_reached = false
 var actor_velocity: Vector2= Vector2.ZERO
-var speed = 80
+var speed = 65
 var path = []
 var state ="Wander"
-var wander_range = 200
+var wander_range = 64
 onready var wander_timer = $WanderTimer
 onready var raycast_timer = $RaycastTimer
 onready var run_timer = $RunTimer
@@ -23,15 +23,17 @@ onready var nav = get_parent().get_node("LevelNav")
 var player_last_seen
 var player_detected = false
 var body
-var damage = 1
+var damage = 2
 var run = false
+var moving_left = false
+var previous_x
 
 onready var target = get_tree().get_nodes_in_group("Players")[0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("Ai/Alert/CollisionShape2D").shape.radius = 78
-	get_node("Ai/Attack Range/CollisionShape2D").shape.radius =19
+	get_node("Ai/Alert/CollisionShape2D").shape.radius = 64
+	get_node("Ai/Attack Range/CollisionShape2D").shape.radius =26
 	randomize()
 	var random_x = rand_range(-wander_range,wander_range)
 	var random_y = rand_range(-wander_range,wander_range)
@@ -52,13 +54,24 @@ func _process(delta):
 		
 	
 	if patrol_location_reached == false:
+		previous_x = position.x
 		move_along_path(speed*delta)
+		var dir_x = (position.x - previous_x)
+		if dir_x > 0:
+			moving_left = true
+		elif dir_x < 0:
+			moving_left = false
+		$Bear_Sprite.change_state("Move", moving_left)
+#		print(state)
+	else:
+		$Bear_Sprite.change_state("Idle", moving_left)
 #		print(state)
 	$Label.text = state
 func wander(delta):
 	if not patrol_location_reached:
 		if actor.global_position.distance_to(patrol_location) < 4:
 			patrol_location_reached = true
+			$Bear_Sprite.change_state("Idle", moving_left)
 			actor_velocity = Vector2.ZERO
 			wander_timer.start()
 		
@@ -74,12 +87,14 @@ func alert(delta):
 		player_detected = true
 		_update_navigation_path(actor.position, target.global_position)
 		patrol_location_reached = false
+		$Bear_Sprite.change_state("Move", moving_left)
 	else:
 		raycast_timer.start()
 		state = "Wander"
 
 func attack(delta):
 		target.take_damage(damage)
+		$Bear_Sprite.change_state("Attack", moving_left)
 		run = true
 		run_timer.start()
 func _on_Ai_state_changed(state,body):
@@ -135,6 +150,7 @@ func _on_WanderTimer_timeout():
 func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
 		health -= target.get_weapon_damage()
+		$Bear_Sprite.change_state("Hurt", moving_left)
 		print("health")
 		if health <= 0:
 			target.change_weapon(weapon)

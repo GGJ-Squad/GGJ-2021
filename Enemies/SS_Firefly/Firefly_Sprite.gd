@@ -25,8 +25,7 @@ func change_state(state, flipped):
 		self.animation = state
 	is_flipped = flipped
 	
-
-func _on_Mole_Sprite_animation_finished():
+func _on_Firefly_Sprite_animation_finished():
 	if self.animation == "Attack":
 		is_attacking=false
 		self.state = "Move"

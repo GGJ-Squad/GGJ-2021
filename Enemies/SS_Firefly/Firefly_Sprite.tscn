@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Enemies/SS_Firefly/Run/SS_Firefly_Run2.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/SS_Firefly/Run/SS_Firefly_Run4.png" type="Texture" id=2]
@@ -20,32 +20,35 @@
 [ext_resource path="res://Enemies/SS_Firefly/Hurt/SS_Firefly_Hurt3.png" type="Texture" id=18]
 [ext_resource path="res://Enemies/SS_Firefly/Attack/SS_Firefly_Attack5.png" type="Texture" id=19]
 [ext_resource path="res://Enemies/SS_Firefly/Hurt/SS_Firefly_Hurt4.png" type="Texture" id=20]
+[ext_resource path="res://Enemies/SS_Firefly/Firefly_Sprite.gd" type="Script" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Hurt",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Attack",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Move",
 "speed": 15.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "Attack",
-"speed": 10.0
 } ]
 
 [node name="Firefly_Sprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "Move"
-frame = 2
+frame = 1
 playing = true
+script = ExtResource( 21 )
+[connection signal="animation_finished" from="." to="." method="_on_Firefly_Sprite_animation_finished"]

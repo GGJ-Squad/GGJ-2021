@@ -2,22 +2,18 @@
 
 [ext_resource path="res://Enemies/MushroomMan#2.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Ai.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/SS_Mushroom/Mushroom_Sprite.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.04858, 6.5611 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.70036, 8.21288 )
+extents = Vector2( 13.1546, 14.9641 )
 
 [node name="MushroomMan#2" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
 script = ExtResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.181539, 0.187385 )
-texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -57,9 +53,17 @@ __meta__ = {
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="Mushroom_Sprite" parent="." instance=ExtResource( 4 )]
+frame = 2
+
+[node name="GrenadeTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 [connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 [connection signal="state_changed" from="Ai" to="." method="_on_Ai_state_changed"]
 [connection signal="timeout" from="WanderTimer" to="." method="_on_WanderTimer_timeout"]
 [connection signal="timeout" from="RaycastTimer" to="." method="_on_RaycastTimer_timeout"]
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]
+[connection signal="timeout" from="GrenadeTimer" to="." method="_on_GrenadeTimer_timeout"]

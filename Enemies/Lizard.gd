@@ -11,10 +11,10 @@ var rotate
 var patrol_location: Vector2 = Vector2.ZERO
 var patrol_location_reached = false
 var actor_velocity: Vector2= Vector2.ZERO
-var speed = 85
+var speed = 75
 var path = []
 var state ="Wander"
-var wander_range = 200
+var wander_range = 64
 onready var wander_timer = $WanderTimer
 onready var raycast_timer = $RaycastTimer
 onready var raycast = $RayCast2D
@@ -23,13 +23,14 @@ var player_last_seen
 var player_detected = false
 var body
 var damage = 1
-
+var moving_left = false
+var previous_x
 
 onready var target = get_tree().get_nodes_in_group("Players")[0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("Ai/Alert/CollisionShape2D").shape.radius = 84
+	get_node("Ai/Alert/CollisionShape2D").shape.radius = 64
 	get_node("Ai/Attack Range/CollisionShape2D").shape.radius =30
 	randomize()
 	var random_x = rand_range(-wander_range,wander_range)
@@ -47,13 +48,23 @@ func _process(delta):
 		attack(delta)
 		
 	if patrol_location_reached == false:
+		previous_x = position.x
 		move_along_path(speed*delta)
+		var dir_x = (position.x - previous_x)
+		if dir_x > 0:
+			moving_left = true
+		elif dir_x < 0:
+			moving_left = false
+		$Lizard_Sprite.change_state("Move", moving_left)
+	else:
+		$Lizard_Sprite.change_state("Idle", moving_left)
 #		print(state)
 	$Label.text = state
 func wander(delta):
 	if not patrol_location_reached:
 		if actor.global_position.distance_to(patrol_location) < 4:
 			patrol_location_reached = true
+			$Lizard_Sprite.change_state("Idle", moving_left)
 			actor_velocity = Vector2.ZERO
 			wander_timer.start()
 		
@@ -62,19 +73,18 @@ func alert(delta):
 	raycast.cast_to = target.global_position - actor.global_position+Vector2(0,8)
 	raycast.cast_to *= 1.5
 	raycast.force_raycast_update()
-#	print(raycast.get_collider())
-#	print(target)
-	print(raycast.get_collider() == target or player_detected)
 	if raycast.get_collider() == target or player_detected:
 		player_detected = true
 		_update_navigation_path(actor.position, target.global_position)
 		patrol_location_reached = false
+		$Lizard_Sprite.change_state("Move", moving_left)
 	else:
 		raycast_timer.start()
 		state = "Wander"
 
 func attack(delta):
 		target.take_damage(damage)
+		$Lizard_Sprite.change_state("Attack", moving_left)
 
 
 func _on_Ai_state_changed(state,body):
@@ -129,6 +139,7 @@ func _on_WanderTimer_timeout():
 
 func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
+		$Lizard_Sprite.change_state("Hurt", moving_left)
 		health -= target.get_weapon_damage()
 		print("health")
 		if health <= 0:

@@ -11,10 +11,10 @@ var rotate
 var patrol_location: Vector2 = Vector2.ZERO
 var patrol_location_reached = false
 var actor_velocity: Vector2= Vector2.ZERO
-var speed = 80
+var speed = 70
 var path = []
 var state ="Wander"
-var wander_range = 200
+var wander_range = 64
 onready var wander_timer = $WanderTimer
 onready var raycast_timer = $RaycastTimer
 onready var raycast = $RayCast2D
@@ -57,6 +57,8 @@ func _process(delta):
 			moving_left = false
 		$Mole_Sprite.change_state("Move", moving_left)
 #		print(state)
+	else:
+		$Mole_Sprite.change_state("Idle", moving_left)
 	$Label.text = state
 func wander(delta):
 	if not patrol_location_reached:
@@ -75,6 +77,7 @@ func alert(delta):
 		player_detected = true
 		_update_navigation_path(actor.position, target.global_position)
 		patrol_location_reached = false
+		
 		$Mole_Sprite.change_state("Move", moving_left)
 	else:
 		raycast_timer.start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Enemies/SS_Mushroom/Idle/SS_Mushroom_Idle2.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/SS_Mushroom/Attack/SS_Mushroom_Attack2.png" type="Texture" id=2]
@@ -16,32 +16,35 @@
 [ext_resource path="res://Enemies/SS_Mushroom/Attack/SS_Mushroom_Attack5.png" type="Texture" id=14]
 [ext_resource path="res://Enemies/SS_Mushroom/Run/SS_Mushroom_Run2.png" type="Texture" id=15]
 [ext_resource path="res://Enemies/SS_Mushroom/Idle/SS_Mushroom_Idle4.png" type="Texture" id=16]
+[ext_resource path="res://Enemies/SS_Mushroom/Mushroom_Sprite.gd" type="Script" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Hurt",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 15 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Move",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 13 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Hurt",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Attack",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 15 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Move",
+"speed": 10.0
 } ]
 
 [node name="Mushroom_Sprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "Move"
-frame = 2
+frame = 1
 playing = true
+script = ExtResource( 17 )
+[connection signal="animation_finished" from="." to="." method="_on_Mushroom_Sprite_animation_finished"]

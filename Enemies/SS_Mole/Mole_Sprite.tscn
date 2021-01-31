@@ -30,21 +30,21 @@ animations = [ {
 "name": "Hurt",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 16 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "Move",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 15 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 16 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Move",
 "speed": 10.0
 } ]
 
 [node name="Mole_Sprite" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "Move"
-frame = 1
+frame = 2
 playing = true
 script = ExtResource( 17 )
 [connection signal="animation_finished" from="." to="." method="_on_Mole_Sprite_animation_finished"]

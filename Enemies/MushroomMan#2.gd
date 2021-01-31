@@ -18,13 +18,16 @@ var wander_range = 200
 onready var wander_timer = $WanderTimer
 onready var raycast_timer = $RaycastTimer
 onready var cooldown_timer = $CooldownTimer
+onready var grenade_timer = $GrenadeTimer
 onready var raycast = $RayCast2D
 onready var nav = get_parent().get_node("LevelNav")
 var player_last_seen
 var player_detected = false
 var body
-var damage = 1
+var damage = 2
 var cooldown = false
+var moving_left = false
+var previous_x
 
 
 onready var target = get_tree().get_nodes_in_group("Players")[0]
@@ -49,13 +52,23 @@ func _process(delta):
 		attack(delta)
 		
 	if patrol_location_reached == false:
+		previous_x = position.x
 		move_along_path(speed*delta)
+		var dir_x = (position.x - previous_x)
+		if dir_x > 0:
+			moving_left = true
+		elif dir_x < 0:
+			moving_left = false
+		$Mushroom_Sprite.change_state("Move", moving_left)
 #		print(state)
+	else:
+		$Mushroom_Sprite.change_state("Idle", moving_left)
 	$Label.text = state
 func wander(delta):
 	if not patrol_location_reached:
 		if actor.global_position.distance_to(patrol_location) < 4:
 			patrol_location_reached = true
+			$Mushroom_Sprite.change_state("Idle", moving_left)
 			actor_velocity = Vector2.ZERO
 			wander_timer.start()
 		
@@ -66,12 +79,13 @@ func alert(delta):
 		raycast.cast_to *= 1.5
 		raycast.force_raycast_update()
 		if raycast.get_collider() == target or player_detected:
-			player_detected = true
-			var inst = load("Enemies/MushyGrenade.tscn").instance()
-			inst.dir = actor.position.direction_to(target.position)
-			inst.position = actor.position
-			inst.start(target)
-			get_parent().add_child(inst)
+			var dir_x = (position.x - target.position.x)
+			if dir_x < 0:
+				moving_left = true
+			elif dir_x > 0:
+				moving_left = false
+			$Mushroom_Sprite.change_state("Attack", moving_left)
+			grenade_timer.start()
 			cooldown_timer.start()
 			cooldown = true
 		else:
@@ -81,6 +95,8 @@ func alert(delta):
 
 func attack(delta):
 	_update_navigation_path(actor.position, (target.global_position - actor.global_position)*-1+actor.global_position)
+	$Mushroom_Sprite.change_state("Move", moving_left)
+	patrol_location_reached = false
 
 
 func _on_Ai_state_changed(state,body):
@@ -136,6 +152,7 @@ func _on_WanderTimer_timeout():
 func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("player_damage"):
 		health -= target.get_weapon_damage()
+		$Mushroom_Sprite.change_state("Hurt", moving_left)
 		print("health")
 		if health <= 0:
 			target.change_weapon(weapon)
@@ -156,3 +173,12 @@ func _on_RaycastTimer_timeout():
 func _on_CooldownTimer_timeout():
 	cooldown=false
 	
+
+
+func _on_GrenadeTimer_timeout():
+	player_detected = true
+	var inst = load("Enemies/MushyGrenade.tscn").instance()
+	inst.dir = actor.position.direction_to(target.position)
+	inst.position = actor.position
+	inst.start(target)
+	get_parent().add_child(inst)
