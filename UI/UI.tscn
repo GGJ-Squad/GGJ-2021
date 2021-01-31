@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://UI/Heart_4.png" type="Texture" id=1]
 [ext_resource path="res://UI/Heart_3.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Sounds/heartBreak3.wav" type="AudioStream" id=19]
 [ext_resource path="res://Sounds/heartBreak4.wav" type="AudioStream" id=20]
 [ext_resource path="res://Sounds/heartBreak2.wav" type="AudioStream" id=21]
+[ext_resource path="res://UI/WeaponIcons/UI_MushroomGrenade.png" type="Texture" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -86,6 +87,7 @@ texture = ExtResource( 13 )
 [node name="Icon_Grenade" type="Sprite" parent="Weapon"]
 visible = false
 scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 22 )
 
 [node name="Icon_Shield" type="Sprite" parent="Weapon"]
 visible = false
@@ -102,7 +104,7 @@ visible = false
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 16 )
 
-[node name="Icon_Trial" type="Sprite" parent="Weapon"]
+[node name="Icon_Trail" type="Sprite" parent="Weapon"]
 visible = false
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 17 )
