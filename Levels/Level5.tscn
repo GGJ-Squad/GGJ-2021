@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tiles/Decals.tres" type="TileSet" id=1]
 [ext_resource path="res://Tiles/SS_Cave_Lava_Base.png" type="Texture" id=2]
+[ext_resource path="res://Music/Lava.ogg" type="AudioStream" id=3]
 
 [sub_resource type="TileSet" id=1]
 0/name = "SS_Cave_Lava_Base.png 0"
@@ -289,17 +290,23 @@
 
 [node name="Level5" type="Node2D"]
 
-[node name="Floor" type="TileMap" parent="."]
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="Floor" type="TileMap" parent="Navigation2D"]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
-[node name="Walls" type="TileMap" parent="."]
+[node name="Walls" type="TileMap" parent="Navigation2D"]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
-[node name="Decor" type="TileMap" parent="."]
+[node name="Decor" type="TileMap" parent="Navigation2D"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
