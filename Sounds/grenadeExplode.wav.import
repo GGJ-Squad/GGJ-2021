@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/grenadeExplode.wav-22f2079012911632be2bd21f0b68c289.sample"
+path="res://.import/grenadeExplode.wav-ba2f80fb45cdda7cfffeee46c0f246b6.sample"
 
 [deps]
 
-source_file="res://grenadeExplode.wav"
-dest_files=[ "res://.import/grenadeExplode.wav-22f2079012911632be2bd21f0b68c289.sample" ]
+source_file="res://Sounds/grenadeExplode.wav"
+dest_files=[ "res://.import/grenadeExplode.wav-ba2f80fb45cdda7cfffeee46c0f246b6.sample" ]
 
 [params]
 

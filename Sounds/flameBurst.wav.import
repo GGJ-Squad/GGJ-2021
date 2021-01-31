@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/flameBurst.wav-0ca171be0d1e9247073520757c1d13a2.sample"
+path="res://.import/flameBurst.wav-20f575fad5009f66ec44405ca4c6743c.sample"
 
 [deps]
 
-source_file="res://flameBurst.wav"
-dest_files=[ "res://.import/flameBurst.wav-0ca171be0d1e9247073520757c1d13a2.sample" ]
+source_file="res://Sounds/flameBurst.wav"
+dest_files=[ "res://.import/flameBurst.wav-20f575fad5009f66ec44405ca4c6743c.sample" ]
 
 [params]
 
