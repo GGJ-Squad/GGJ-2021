@@ -49,7 +49,7 @@ wait_time = 1.5
 one_shot = true
 
 [node name="Mushroom_Sprite" parent="." instance=ExtResource( 4 )]
-frame = 0
+frame = 2
 
 [node name="GrenadeTimer" type="Timer" parent="."]
 wait_time = 0.5

@@ -35,7 +35,7 @@ onready var target = get_tree().get_nodes_in_group("Players")[0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("Ai/Alert/CollisionShape2D").shape.radius = 75
+	get_node("Ai/Alert/CollisionShape2D").shape.radius = 110
 	get_node("Ai/Attack Range/CollisionShape2D").shape.radius =30
 	randomize()
 	var random_x = rand_range(-wander_range,wander_range)
