@@ -494,6 +494,8 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 18/shapes = [  ]
 18/z_index = 0
 
+[sub_resource type="StyleBoxEmpty" id=30]
+
 [sub_resource type="StyleBoxEmpty" id=31]
 
 [sub_resource type="StyleBoxEmpty" id=32]
@@ -512,9 +514,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [sub_resource type="StyleBoxEmpty" id=39]
 
-[sub_resource type="StyleBoxEmpty" id=40]
-
-[sub_resource type="DynamicFont" id=30]
+[sub_resource type="DynamicFont" id=40]
 size = 256
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -553,7 +553,7 @@ tile_data = PoolIntArray( 8, 71, 0, 11, 536870982, 0, 65562, 77, 0, 131097, 77, 
 position = Vector2( 250.764, 686.184 )
 scale = Vector2( 4, 4 )
 animation = "Idle"
-frame = 3
+frame = 0
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -587,11 +587,11 @@ margin_left = 674.0
 margin_top = 500.0
 margin_right = 1270.0
 margin_bottom = 654.0
-custom_styles/hover = SubResource( 31 )
-custom_styles/pressed = SubResource( 32 )
-custom_styles/focus = SubResource( 33 )
-custom_styles/disabled = SubResource( 34 )
-custom_styles/normal = SubResource( 35 )
+custom_styles/hover = SubResource( 30 )
+custom_styles/pressed = SubResource( 31 )
+custom_styles/focus = SubResource( 32 )
+custom_styles/disabled = SubResource( 33 )
+custom_styles/normal = SubResource( 34 )
 custom_fonts/font = ExtResource( 4 )
 text = "Start"
 script = ExtResource( 1 )
@@ -620,11 +620,11 @@ margin_left = 674.0
 margin_top = 729.852
 margin_right = 1270.0
 margin_bottom = 883.852
-custom_styles/hover = SubResource( 36 )
-custom_styles/pressed = SubResource( 37 )
-custom_styles/focus = SubResource( 38 )
-custom_styles/disabled = SubResource( 39 )
-custom_styles/normal = SubResource( 40 )
+custom_styles/hover = SubResource( 35 )
+custom_styles/pressed = SubResource( 36 )
+custom_styles/focus = SubResource( 37 )
+custom_styles/disabled = SubResource( 38 )
+custom_styles/normal = SubResource( 39 )
 custom_fonts/font = ExtResource( 4 )
 text = "Exit"
 script = ExtResource( 5 )
@@ -638,7 +638,7 @@ margin_left = 233.376
 margin_top = -171.61
 margin_right = 1708.38
 margin_bottom = 733.39
-custom_fonts/font = SubResource( 30 )
+custom_fonts/font = SubResource( 40 )
 text = "
 Quick Swap 
 Caverns"
