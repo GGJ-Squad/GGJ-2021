@@ -553,6 +553,7 @@ tile_data = PoolIntArray( 8, 71, 0, 11, 536870982, 0, 65562, 77, 0, 131097, 77, 
 position = Vector2( 250.764, 686.184 )
 scale = Vector2( 4, 4 )
 animation = "Idle"
+frame = 3
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
