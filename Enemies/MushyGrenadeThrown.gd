@@ -45,5 +45,6 @@ func start(player):
 	self.player = player
 func player_damage(body):
 	if body.is_in_group("Players"):
+		player.apply_knockback(self.position,50)
 		player.take_damage(damage)
 

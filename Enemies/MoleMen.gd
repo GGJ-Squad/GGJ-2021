@@ -84,6 +84,7 @@ func alert(delta):
 		state = "Wander"
 
 func attack(delta):
+		target.apply_knockback(actor.position)
 		target.take_damage(damage)
 		$Mole_Sprite.change_state("Attack", moving_left)
 

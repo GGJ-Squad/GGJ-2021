@@ -51,6 +51,7 @@ __meta__ = {
 }
 
 [node name="Mole_Sprite" parent="." instance=ExtResource( 4 )]
+frame = 0
 [connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 [connection signal="state_changed" from="Ai" to="." method="_on_Ai_state_changed"]
