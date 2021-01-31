@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=53 format=2]
+[gd_resource type="TileSet" load_steps=56 format=2]
 
 [ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Mushroom_Bounce.tres" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpriteSheets/WaterDrop/WaterDrop.tres" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Tiles/SS_Cave_Lush_Base.png" type="Texture" id=5]
 [ext_resource path="res://Tiles/SS_Cave_Mushroom_Base.png" type="Texture" id=6]
 [ext_resource path="res://Tiles/Water/water_tile.tres" type="Texture" id=7]
+[ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Red_Mushroom_Bounce.tres" type="Texture" id=8]
+[ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Purple_Mushroom_Bounce.tres" type="Texture" id=9]
+[ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Blue_Mushroom_Bounce.tres" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 11.2325, 12.6223, 4.90419, 12.6223, 4.90419, 5.21221, 11.2325, 5.21221 )
@@ -111,25 +114,25 @@ points = PoolVector2Array( 0.546677, 15.8577, 5.95547, 9.74576, 2.2775, 4.22881,
 points = PoolVector2Array( 23.1578, 19.8717, 8.51514, 19.8717, 8.51514, 6.47519, 23.1578, 6.47519 )
 
 [sub_resource type="ConvexPolygonShape2D" id=27]
-points = PoolVector2Array( 29.1389, 18.9873, 1.34241, 18.9873, 1.34241, 4.58671, 29.1389, 4.58671 )
+points = PoolVector2Array( 13.213, 26.6897, 0.751129, 26.6897, 0.751129, 13.6826, 13.213, 13.6826 )
 
 [sub_resource type="ConvexPolygonShape2D" id=28]
-points = PoolVector2Array( 14.0744, 15.4503, 0.184906, 15.4503, 0.184906, 5.43692, 14.0744, 5.43692 )
+points = PoolVector2Array( 29.588, 16.2578, 1.32449, 16.2578, 1.32449, 3.17584, 29.588, 3.17584 )
 
 [sub_resource type="ConvexPolygonShape2D" id=29]
 points = PoolVector2Array( 13.213, 26.6897, 0.751129, 26.6897, 0.751129, 13.6826, 13.213, 13.6826 )
 
 [sub_resource type="ConvexPolygonShape2D" id=30]
-points = PoolVector2Array( 29.588, 16.2578, 1.32449, 16.2578, 1.32449, 3.17584, 29.588, 3.17584 )
+points = PoolVector2Array( 13.6803, 26.0251, 1.21844, 26.0251, 1.21844, 13.4854, 13.6803, 13.4854 )
 
 [sub_resource type="ConvexPolygonShape2D" id=31]
-points = PoolVector2Array( 14.2359, 15.0744, 0.346405, 15.0744, 0.346405, 4.092, 14.2359, 4.092 )
+points = PoolVector2Array( 29.265, 16.5279, 0.678467, 16.5279, 0.678467, 3.28447, 29.265, 3.28447 )
 
 [sub_resource type="ConvexPolygonShape2D" id=32]
 points = PoolVector2Array( 13.6803, 26.0251, 1.21844, 26.0251, 1.21844, 13.4854, 13.6803, 13.4854 )
 
 [sub_resource type="ConvexPolygonShape2D" id=33]
-points = PoolVector2Array( 29.265, 16.5279, 0.678467, 16.5279, 0.678467, 3.28447, 29.265, 3.28447 )
+points = PoolVector2Array( 14.1116, 10.9596, 0.169868, 10.9596, 0.169868, 1.14588, 14.1116, 1.14588 )
 
 [sub_resource type="OccluderPolygon2D" id=34]
 polygon = PoolVector2Array( 0.169868, 0.834335, 14.0337, 0.756447, 13.8, 11.349, 0, 11.2711 )
@@ -1553,3 +1556,45 @@ resource_local_to_scene = true
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 81/z_index = 0
+82/name = "Red_Mushroom_Bounce.tres 82"
+82/texture = ExtResource( 8 )
+82/tex_offset = Vector2( 0, 0 )
+82/modulate = Color( 1, 1, 1, 1 )
+82/region = Rect2( 0, 0, 16, 16 )
+82/tile_mode = 0
+82/occluder_offset = Vector2( 0, 0 )
+82/navigation_offset = Vector2( 0, 0 )
+82/shape_offset = Vector2( 0, 0 )
+82/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+82/shape_one_way = false
+82/shape_one_way_margin = 0.0
+82/shapes = [  ]
+82/z_index = 0
+83/name = "Purple_Mushroom_Bounce.tres 83"
+83/texture = ExtResource( 9 )
+83/tex_offset = Vector2( 0, 0 )
+83/modulate = Color( 1, 1, 1, 1 )
+83/region = Rect2( 0, 0, 16, 16 )
+83/tile_mode = 0
+83/occluder_offset = Vector2( 0, 0 )
+83/navigation_offset = Vector2( 0, 0 )
+83/shape_offset = Vector2( 0, 0 )
+83/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+83/shape_one_way = false
+83/shape_one_way_margin = 0.0
+83/shapes = [  ]
+83/z_index = 0
+84/name = "Blue_Mushroom_Bounce.tres 84"
+84/texture = ExtResource( 10 )
+84/tex_offset = Vector2( 0, 0 )
+84/modulate = Color( 1, 1, 1, 1 )
+84/region = Rect2( 0, 0, 16, 16 )
+84/tile_mode = 0
+84/occluder_offset = Vector2( 0, 0 )
+84/navigation_offset = Vector2( 0, 0 )
+84/shape_offset = Vector2( 0, 0 )
+84/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+84/shape_one_way = false
+84/shape_one_way_margin = 0.0
+84/shapes = [  ]
+84/z_index = 0
