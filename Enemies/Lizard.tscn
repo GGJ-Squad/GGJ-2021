@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enemies/Lizard.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Ai.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sounds/lizard.wav" type="AudioStream" id=3]
 [ext_resource path="res://Enemies/SS_Lizard/Lizard_Sprite.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -41,17 +42,11 @@ one_shot = true
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
-[node name="Label" type="Label" parent="."]
-margin_left = -19.2708
-margin_top = -22.8103
-margin_right = 20.7292
-margin_bottom = -8.81029
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Lizard_Sprite" parent="." instance=ExtResource( 5 )]
-frame = 3
+frame = 0
+
+[node name="Lizard_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 [connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 [connection signal="state_changed" from="Ai" to="." method="_on_Ai_state_changed"]

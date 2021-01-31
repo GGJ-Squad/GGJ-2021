@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var health = 100
-var weapon = "claws"
+var weapon = "flamethrower"
 var actor = self
 var rotate
 var patrol_location: Vector2 = Vector2.ZERO
@@ -25,6 +25,7 @@ var body
 var damage = 1
 var moving_left = false
 var previous_x
+var chance = 0
 
 onready var target = get_tree().get_nodes_in_group("Players")[0]
 
@@ -59,7 +60,6 @@ func _process(delta):
 #		print(state)
 	else:
 		$Firefly_Sprite.change_state("Idle", moving_left)
-	$Label.text = state
 func wander(delta):
 	if not patrol_location_reached:
 		if actor.global_position.distance_to(patrol_location) < 4:
@@ -104,6 +104,11 @@ func _on_Ai_state_changed(state,body):
 		_update_navigation_path(actor.position, player_last_seen)
 		patrol_location_reached = false
 		player_detected = false
+	elif state == "Alert":
+		if chance <= 0:
+			$Firefly_Sound.play()
+			chance = rand_range(2,4)
+		chance -= 1
 		
 func move_along_path(distance):
 	var last_point = actor.position

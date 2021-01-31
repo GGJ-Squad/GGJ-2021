@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Enemies/MushroomMan#2.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/Ai.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sounds/mushroom.wav" type="AudioStream" id=3]
 [ext_resource path="res://Enemies/SS_Mushroom/Mushroom_Sprite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/mushHurt1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/mushAlert2.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.04858, 6.5611 )
@@ -41,25 +44,25 @@ one_shot = true
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
-[node name="Label" type="Label" parent="."]
-margin_left = -19.2708
-margin_top = -22.8103
-margin_right = 20.7292
-margin_bottom = -8.81029
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
 
 [node name="Mushroom_Sprite" parent="." instance=ExtResource( 4 )]
-frame = 2
+frame = 0
 
 [node name="GrenadeTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Mush_Alert" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Mush_Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Mush_Cry" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 [connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 [connection signal="state_changed" from="Ai" to="." method="_on_Ai_state_changed"]
