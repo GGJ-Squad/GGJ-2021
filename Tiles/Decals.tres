@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=56 format=2]
+[gd_resource type="TileSet" load_steps=58 format=2]
 
 [ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Mushroom_Bounce.tres" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpriteSheets/WaterDrop/WaterDrop.tres" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Red_Mushroom_Bounce.tres" type="Texture" id=8]
 [ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Purple_Mushroom_Bounce.tres" type="Texture" id=9]
 [ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Blue_Mushroom_Bounce.tres" type="Texture" id=10]
+[ext_resource path="res://Tiles/Lava/Lava_2.tres" type="Texture" id=11]
+[ext_resource path="res://Tiles/Lava/Lava_1.tres" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 11.2325, 12.6223, 4.90419, 12.6223, 4.90419, 5.21221, 11.2325, 5.21221 )
@@ -1598,3 +1600,31 @@ resource_local_to_scene = true
 84/shape_one_way_margin = 0.0
 84/shapes = [  ]
 84/z_index = 0
+85/name = "Lava_1.tres 85"
+85/texture = ExtResource( 12 )
+85/tex_offset = Vector2( 0, 0 )
+85/modulate = Color( 1, 1, 1, 1 )
+85/region = Rect2( 0, 0, 16, 16 )
+85/tile_mode = 0
+85/occluder_offset = Vector2( 0, 0 )
+85/navigation_offset = Vector2( 0, 0 )
+85/shape_offset = Vector2( 0, 0 )
+85/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+85/shape_one_way = false
+85/shape_one_way_margin = 0.0
+85/shapes = [  ]
+85/z_index = 0
+86/name = "Lava_2.tres 86"
+86/texture = ExtResource( 11 )
+86/tex_offset = Vector2( 0, 0 )
+86/modulate = Color( 1, 1, 1, 1 )
+86/region = Rect2( 0, 0, 16, 16 )
+86/tile_mode = 0
+86/occluder_offset = Vector2( 0, 0 )
+86/navigation_offset = Vector2( 0, 0 )
+86/shape_offset = Vector2( 0, 0 )
+86/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+86/shape_one_way = false
+86/shape_one_way_margin = 0.0
+86/shapes = [  ]
+86/z_index = 0
