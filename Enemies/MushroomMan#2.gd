@@ -11,18 +11,20 @@ var rotate
 var patrol_location: Vector2 = Vector2.ZERO
 var patrol_location_reached = false
 var actor_velocity: Vector2= Vector2.ZERO
-var speed = 50
+var speed = 80
 var path = []
 var state ="Wander"
 var wander_range = 200
 onready var wander_timer = $WanderTimer
 onready var raycast_timer = $RaycastTimer
+onready var cooldown_timer = $CooldownTimer
 onready var raycast = $RayCast2D
 onready var nav = get_parent().get_node("LevelNav")
 var player_last_seen
 var player_detected = false
 var body
 var damage = 1
+var cooldown = false
 
 
 onready var target = get_tree().get_nodes_in_group("Players")[0]
@@ -59,22 +61,17 @@ func wander(delta):
 		
 
 func alert(delta):
-	raycast.cast_to = target.global_position - actor.global_position
-	raycast.cast_to *= 1.5
-	raycast.force_raycast_update()
-#	print(raycast.get_collider())
-#	print(target)
-	print(raycast.get_collider() == target or player_detected)
-	if raycast.get_collider() == target or player_detected:
-		player_detected = true
-		_update_navigation_path(actor.position, target.global_position)
-		patrol_location_reached = false
-	else:
-		raycast_timer.start()
-		state = "Wander"
+	if not cooldown:
+		var inst = load("Enemies/MushyGrenade.tscn").instance()
+		inst.dir = actor.position.direction_to(target.position)
+		inst.position = actor.position
+		inst.start(target)
+		get_parent().add_child(inst)
+		cooldown_timer.start()
+		cooldown = true
 
 func attack(delta):
-		target.take_damage(damage)
+	_update_navigation_path(actor.position, (target.global_position - actor.global_position)*-1+actor.global_position)
 
 
 func _on_Ai_state_changed(state,body):
@@ -143,3 +140,7 @@ func _on_Hurtbox_body_entered(body):
 func _on_RaycastTimer_timeout():
 	if state == "Wander":
 		state = "Alert"
+
+
+func _on_CooldownTimer_timeout():
+	cooldown=false

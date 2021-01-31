@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/heartBreak4.wav-fc8b6abf4ef92a5f2b4b8332c5065fad.sample"
+path="res://.import/heartBreak4.wav-a0e58a0afa4c08da29bf06c3f0a89003.sample"
 
 [deps]
 
-source_file="res://heartBreak4.wav"
-dest_files=[ "res://.import/heartBreak4.wav-fc8b6abf4ef92a5f2b4b8332c5065fad.sample" ]
+source_file="res://Sounds/heartBreak4.wav"
+dest_files=[ "res://.import/heartBreak4.wav-a0e58a0afa4c08da29bf06c3f0a89003.sample" ]
 
 [params]
 

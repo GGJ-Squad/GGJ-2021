@@ -11,7 +11,7 @@ var rotate
 var patrol_location: Vector2 = Vector2.ZERO
 var patrol_location_reached = false
 var actor_velocity: Vector2= Vector2.ZERO
-var speed = 60
+var speed = 85
 var path = []
 var state ="Wander"
 var wander_range = 200
