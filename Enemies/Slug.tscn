@@ -30,19 +30,11 @@ one_shot = true
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
-[node name="Label" type="Label" parent="."]
-margin_left = -19.2708
-margin_top = -22.8103
-margin_right = 20.7292
-margin_bottom = -8.81029
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.108
 
 [node name="Worm_Sprite" parent="." instance=ExtResource( 2 )]
+frame = 3
 [connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 [connection signal="timeout" from="WanderTimer" to="." method="_on_WanderTimer_timeout"]

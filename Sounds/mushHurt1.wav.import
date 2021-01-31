@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/mushHurt1.wav-6b47e9f6b7e2a30e85e49433dc0c014b.sample"
+path="res://.import/mushHurt1.wav-b11af4fafe31a4ffdecbca2f21a5996c.sample"
 
 [deps]
 
-source_file="res://mushHurt1.wav"
-dest_files=[ "res://.import/mushHurt1.wav-6b47e9f6b7e2a30e85e49433dc0c014b.sample" ]
+source_file="res://Sounds/mushHurt1.wav"
+dest_files=[ "res://.import/mushHurt1.wav-b11af4fafe31a4ffdecbca2f21a5996c.sample" ]
 
 [params]
 

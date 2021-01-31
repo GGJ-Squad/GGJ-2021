@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/shieldCharge.wav-e9b6bdc1aacd235aeae100f23bd06ae6.sample"
+path="res://.import/shieldCharge.wav-8b82193d3aff781aabd3a385a16e5162.sample"
 
 [deps]
 
-source_file="res://shieldCharge.wav"
-dest_files=[ "res://.import/shieldCharge.wav-e9b6bdc1aacd235aeae100f23bd06ae6.sample" ]
+source_file="res://Sounds/shieldCharge.wav"
+dest_files=[ "res://.import/shieldCharge.wav-8b82193d3aff781aabd3a385a16e5162.sample" ]
 
 [params]
 

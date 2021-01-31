@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed = 0
 var max_speed = 100
 
-var weapon = "flamethrower"
+var weapon = "sword"
 
 var health = 16
 const MAX_HEALTH = 16
@@ -272,6 +272,8 @@ func attack():
 				$Shuriken_Sound.play()
 			"shield":
 				$Shield_Sound.play()
+			"flamethrower":
+				$Flamethrower_Sound.play()
 
 func level_start():
 	self.active = true
