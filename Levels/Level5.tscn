@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Tiles/Decals.tres" type="TileSet" id=1]
 [ext_resource path="res://Tiles/SS_Cave_Lava_Base.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Enemies/Firefly.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Enemies/Turtle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enemies/MoleMen.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Levels/Level_End_Area.tscn" type="PackedScene" id=15]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1260,13 +1261,13 @@ color = Color( 1, 0.690196, 0.556863, 1 )
 energy = 0.6
 
 [node name="FireFly" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1166.13, 842.878 )
+position = Vector2( 1231.87, 887.595 )
 
 [node name="FireFly2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1360.59, 866.689 )
 
 [node name="MushroomMan#2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1233.68, 757.817 )
+position = Vector2( 1297.09, 849.254 )
 
 [node name="FireFly3" parent="." instance=ExtResource( 12 )]
 position = Vector2( 934.451, 14.9135 )
@@ -1281,7 +1282,7 @@ position = Vector2( 1001.12, 56.9797 )
 position = Vector2( 1120.18, 126.032 )
 
 [node name="Lizard3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1254.31, 979.26 )
+position = Vector2( 1312.71, 926.534 )
 
 [node name="Lizard4" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1149.54, 380.809 )
@@ -1305,13 +1306,37 @@ position = Vector2( 611.415, 579.235 )
 position = Vector2( 545.538, 683.209 )
 
 [node name="Turtle" parent="." instance=ExtResource( 13 )]
-position = Vector2( 728.414, 613.115 )
+position = Vector2( 676.684, 603.601 )
 
 [node name="MushroomMan#3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 518.827, 210.184 )
+position = Vector2( 559.703, 166.134 )
 
 [node name="Mole Man" parent="." instance=ExtResource( 14 )]
 position = Vector2( 594.937, 107.913 )
 
 [node name="Mole Man2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 948.131, 533.649 )
+
+[node name="MushroomMan#5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 638.028, 345.565 )
+
+[node name="Lizard5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 836.505, 225.173 )
+
+[node name="Turtle2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1157.38, 420.488 )
+
+[node name="FireFly6" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1155.67, 460.664 )
+
+[node name="FireFly7" parent="." instance=ExtResource( 12 )]
+position = Vector2( 460.411, 593.982 )
+
+[node name="MushroomMan#6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 612.224, 640.003 )
+
+[node name="Turtle3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 514.851, 598.753 )
+
+[node name="Level_End_Area" parent="." instance=ExtResource( 15 )]
+position = Vector2( 801.502, 414.478 )
