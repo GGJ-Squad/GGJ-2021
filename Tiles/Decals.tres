@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=17 format=2]
+[gd_resource type="TileSet" load_steps=35 format=2]
 
 [ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Mushroom_Bounce.tres" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpriteSheets/WaterDrop/WaterDrop.tres" type="Texture" id=2]
@@ -28,6 +28,60 @@ points = PoolVector2Array( 0, 13.1742, 10.6991, 8.4231, 21.4474, 0, 44.346, 0, 6
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
 points = PoolVector2Array( 0.407501, 19.0157, 2.82198, 13.953, 11.3116, 10.9155, 14.4271, 6.24229, 24.3187, 0.322906, 41.0643, 0.478683, 55.3175, 2.27007, 59.9907, 7.56635, 66.1437, 8.89043, 77, 21.2744, 76.4247, 32.0227, 72.2968, 36.6959, 50.4885, 36.6959, 42.2325, 40.1229, 44.1797, 45.2634, 47.6846, 46.0423, 47.2952, 50.7934, 24.9417, 50.7155, 23.6177, 49.703, 29.3034, 44.0951, 29.537, 39.6556, 24.085, 40.3566, 20.0349, 36.1507, 9.98753, 36.5401, 0.0180664, 26.8043 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 52.9583, 62.3363, 41.9244, 55.9107, 45.8836, 61.3627, 38.6142, 62.4661, 30.3063, 56.7544, 21.544, 62.0767, 19.3373, 60.0646, 23.2316, 57.2737, 22.4527, 55.0669, 19.1425, 57.728, 17.3901, 56.6895, 10.7697, 59.1559, 0.319965, 59.9348, 0.579586, 56.3001, 8.30333, 53.1197, 17.1305, 43.5137, 16.2867, 35.4005, 11.6784, 30.7273, 5.96674, 31.4413, 0.579586, 26.3787, 0.319965, 15.15, 6.03164, 8.91912, 16.6112, 3.66178, 31.2799, 3.9214, 45.624, 6.51762, 59.4488, 19.4338, 61.1364, 29.624, 57.4368, 35.4249, 47.5062, 32.1796, 43.0277, 40.7471, 56.1386, 52.4301, 57.8262, 61.452 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0.125252, 47.3726, 4.87633, 37.3252, 11.263, 37.5589, 14.0669, 0, 22.4787, 0, 30.4231, 8.74084, 36.0309, 27.7452, 40.7041, 40.4407, 47.5581, 48.6187, 48, 56.1737, 0, 57, 0, 49.0082 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 54.9303, 4.83915, 35.926, 3.04777, 29.7729, 9.43446, 0.48761, 14.1076, 0, 18.5472, 34.524, 18.9366, 50.335, 26.3358, 59.3698, 26.1022, 63, 0, 63, 0, 54.7745 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 3.97575, 10.2357, 14.8799, 7.12021, 25.4724, 0.110413, 37.1554, 0, 48, 19.7378, 47.8259, 33.6795, 40.3488, 43.8826, 12.4654, 43.8826, 0, 28.8506, 0.470856, 14.2858 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 17, 0, 17, 17, 0, 17 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 0, 0, 17, 0, 17, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 0, 0, 17, 0, 17, 17, 0, 17 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 16, 14.2613, 0.0855103, 14.2613, 0.0855103, 5.23944, 16, 5.23944 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 16, 13.0982, 0.215317, 13.0982, 0.215317, 4.07639, 16, 4.07639 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 16, 13.0001, 0.280228, 13.0001, 0.280228, 3.52386, 16, 3.52386 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+points = PoolVector2Array( 0, 18.7213, 0.704536, 17.0986, 8.36337, 8.40131, 16.3467, 6.84358, 25.758, 0.482849, 36.7271, 0.0934143, 47.9557, 20.6684, 47.8908, 34.6231, 40.4916, 43.9695, 11.0894, 44.6185, 0, 30.0148, 0, 18.0073 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+points = PoolVector2Array( 0.444916, 18.8243, 5.44263, 9.15341, 17.1905, 7.40096, 25.3686, 0, 36.9867, 0, 48, 22.0047, 48, 34.7261, 39.4531, 44, 12.5173, 44, 0, 28.6899, 0, 18.7594 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+points = PoolVector2Array( 0, 63, 0, 54.7638, 4.17712, 35.0975, 2.87901, 29.5156, 9.23975, 0, 14.1077, 0.437973, 14.6918, 25.4266, 19.1054, 34.5133, 19.7544, 50.545, 25.9854, 62.5525 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+points = PoolVector2Array( 0.152992, 52.5359, 4.69637, 35.0764, 2.16505, 29.2349, 10.0186, 0.41687, 12.6148, 0.41687, 25.8555, 62.2068, 0, 63 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+points = PoolVector2Array( 47, 57, 0, 57, 0.709396, 39.5878, 9.01729, 38.9388, 12.3275, 0.255127, 18.8829, 0, 28.4889, 7.1351, 34.9146, 28.2294, 40.821, 40.821, 47, 54.1266 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+points = PoolVector2Array( 0.514679, 49.9435, 2.72147, 46.8929, 3.04599, 40.0779, 6.42107, 37.936, 9.66634, 41.1163, 14.6641, 0.972321, 21.7388, 0.777603, 29.6572, 7.98212, 34.7848, 26.4153, 40.821, 40.305, 47.4413, 49.5865, 48, 55.6876, 1.48826, 57, 0, 50.4303 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 0.18634, 15.2088, 6.35495, 10.7225, 2.65379, 6.68489, 10.5047, 3.76882, 13.533, 0.516273, 18.3557, 1.07706, 26.7675, 5.22687, 30, 17.2276, 23.4028, 23.5084, 6.01849, 24, 0, 16.3304, 0.41066, 14.0872 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+points = PoolVector2Array( 0.546677, 15.8577, 5.95547, 9.74576, 2.2775, 4.22881, 11.851, 4.71559, 12.6624, 0.280388, 17.9089, 0, 18.8825, 2.71434, 24.6699, 2.33572, 30, 16.1281, 28.9428, 24, 4.54918, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=8]
 polygon = PoolVector2Array( 0.169868, 0.834335, 14.0337, 0.756447, 13.8, 11.349, 0, 11.2711 )
@@ -748,9 +802,16 @@ resource_local_to_scene = true
 46/navigation_offset = Vector2( 0, 0 )
 46/shape_offset = Vector2( 0, 0 )
 46/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+46/shape = SubResource( 10 )
 46/shape_one_way = false
-46/shape_one_way_margin = 0.0
-46/shapes = [  ]
+46/shape_one_way_margin = 1.0
+46/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 46/z_index = 0
 47/name = "SpriteSheet_Decor.png 47"
 47/texture = ExtResource( 4 )
@@ -762,9 +823,16 @@ resource_local_to_scene = true
 47/navigation_offset = Vector2( 0, 0 )
 47/shape_offset = Vector2( 0, 0 )
 47/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+47/shape = SubResource( 11 )
 47/shape_one_way = false
-47/shape_one_way_margin = 0.0
-47/shapes = [  ]
+47/shape_one_way_margin = 1.0
+47/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 47/z_index = 0
 48/name = "SpriteSheet_Decor.png 48"
 48/texture = ExtResource( 4 )
@@ -776,9 +844,16 @@ resource_local_to_scene = true
 48/navigation_offset = Vector2( 0, 0 )
 48/shape_offset = Vector2( 0, 0 )
 48/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+48/shape = SubResource( 12 )
 48/shape_one_way = false
-48/shape_one_way_margin = 0.0
-48/shapes = [  ]
+48/shape_one_way_margin = 1.0
+48/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 48/z_index = 0
 49/name = "SpriteSheet_Decor.png 49"
 49/texture = ExtResource( 4 )
@@ -790,9 +865,16 @@ resource_local_to_scene = true
 49/navigation_offset = Vector2( 0, 0 )
 49/shape_offset = Vector2( 0, 0 )
 49/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+49/shape = SubResource( 13 )
 49/shape_one_way = false
-49/shape_one_way_margin = 0.0
-49/shapes = [  ]
+49/shape_one_way_margin = 1.0
+49/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 49/z_index = 0
 50/name = "SpriteSheet_Decor.png 50"
 50/texture = ExtResource( 4 )
@@ -804,9 +886,16 @@ resource_local_to_scene = true
 50/navigation_offset = Vector2( 0, 0 )
 50/shape_offset = Vector2( 0, 0 )
 50/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+50/shape = SubResource( 14 )
 50/shape_one_way = false
-50/shape_one_way_margin = 0.0
-50/shapes = [  ]
+50/shape_one_way_margin = 1.0
+50/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 50/z_index = 0
 51/name = "SpriteSheet_Decor.png 51"
 51/texture = ExtResource( 4 )
@@ -818,9 +907,16 @@ resource_local_to_scene = true
 51/navigation_offset = Vector2( 0, 0 )
 51/shape_offset = Vector2( 0, 0 )
 51/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+51/shape = SubResource( 15 )
 51/shape_one_way = false
-51/shape_one_way_margin = 0.0
-51/shapes = [  ]
+51/shape_one_way_margin = 1.0
+51/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 51/z_index = 0
 52/name = "SpriteSheet_Decor.png 52"
 52/texture = ExtResource( 4 )
@@ -832,9 +928,16 @@ resource_local_to_scene = true
 52/navigation_offset = Vector2( 0, 0 )
 52/shape_offset = Vector2( 0, 0 )
 52/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+52/shape = SubResource( 16 )
 52/shape_one_way = false
-52/shape_one_way_margin = 0.0
-52/shapes = [  ]
+52/shape_one_way_margin = 1.0
+52/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 52/z_index = 0
 53/name = "SpriteSheet_Decor.png 53"
 53/texture = ExtResource( 4 )
@@ -846,9 +949,16 @@ resource_local_to_scene = true
 53/navigation_offset = Vector2( 0, 0 )
 53/shape_offset = Vector2( 0, 0 )
 53/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+53/shape = SubResource( 17 )
 53/shape_one_way = false
-53/shape_one_way_margin = 0.0
-53/shapes = [  ]
+53/shape_one_way_margin = 1.0
+53/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 53/z_index = 0
 54/name = "SpriteSheet_Decor.png 54"
 54/texture = ExtResource( 4 )
@@ -860,9 +970,16 @@ resource_local_to_scene = true
 54/navigation_offset = Vector2( 0, 0 )
 54/shape_offset = Vector2( 0, 0 )
 54/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+54/shape = SubResource( 18 )
 54/shape_one_way = false
-54/shape_one_way_margin = 0.0
-54/shapes = [  ]
+54/shape_one_way_margin = 1.0
+54/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 54/z_index = 0
 55/name = "SpriteSheet_Decor.png 55"
 55/texture = ExtResource( 4 )
@@ -874,9 +991,16 @@ resource_local_to_scene = true
 55/navigation_offset = Vector2( 0, 0 )
 55/shape_offset = Vector2( 0, 0 )
 55/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+55/shape = SubResource( 19 )
 55/shape_one_way = false
-55/shape_one_way_margin = 0.0
-55/shapes = [  ]
+55/shape_one_way_margin = 1.0
+55/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 55/z_index = 0
 56/name = "SpriteSheet_Decor.png 56"
 56/texture = ExtResource( 4 )
@@ -916,9 +1040,16 @@ resource_local_to_scene = true
 58/navigation_offset = Vector2( 0, 0 )
 58/shape_offset = Vector2( 0, 0 )
 58/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+58/shape = SubResource( 20 )
 58/shape_one_way = false
-58/shape_one_way_margin = 0.0
-58/shapes = [  ]
+58/shape_one_way_margin = 1.0
+58/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 20 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 58/z_index = 0
 59/name = "SpriteSheet_Decor.png 59"
 59/texture = ExtResource( 4 )
@@ -930,9 +1061,16 @@ resource_local_to_scene = true
 59/navigation_offset = Vector2( 0, 0 )
 59/shape_offset = Vector2( 0, 0 )
 59/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+59/shape = SubResource( 21 )
 59/shape_one_way = false
-59/shape_one_way_margin = 0.0
-59/shapes = [  ]
+59/shape_one_way_margin = 1.0
+59/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 21 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 59/z_index = 0
 60/name = "SpriteSheet_Decor.png 60"
 60/texture = ExtResource( 4 )
@@ -944,9 +1082,16 @@ resource_local_to_scene = true
 60/navigation_offset = Vector2( 0, 0 )
 60/shape_offset = Vector2( 0, 0 )
 60/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+60/shape = SubResource( 22 )
 60/shape_one_way = false
-60/shape_one_way_margin = 0.0
-60/shapes = [  ]
+60/shape_one_way_margin = 1.0
+60/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 22 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 60/z_index = 0
 61/name = "SpriteSheet_Decor.png 61"
 61/texture = ExtResource( 4 )
@@ -958,9 +1103,16 @@ resource_local_to_scene = true
 61/navigation_offset = Vector2( 0, 0 )
 61/shape_offset = Vector2( 0, 0 )
 61/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+61/shape = SubResource( 23 )
 61/shape_one_way = false
-61/shape_one_way_margin = 0.0
-61/shapes = [  ]
+61/shape_one_way_margin = 1.0
+61/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 23 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 61/z_index = 0
 62/name = "SpriteSheet_Decor.png 62"
 62/texture = ExtResource( 4 )
@@ -972,9 +1124,16 @@ resource_local_to_scene = true
 62/navigation_offset = Vector2( 0, 0 )
 62/shape_offset = Vector2( 0, 0 )
 62/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+62/shape = SubResource( 24 )
 62/shape_one_way = false
-62/shape_one_way_margin = 0.0
-62/shapes = [  ]
+62/shape_one_way_margin = 1.0
+62/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 24 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 62/z_index = 0
 63/name = "SpriteSheet_Decor.png 63"
 63/texture = ExtResource( 4 )
@@ -986,9 +1145,16 @@ resource_local_to_scene = true
 63/navigation_offset = Vector2( 0, 0 )
 63/shape_offset = Vector2( 0, 0 )
 63/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+63/shape = SubResource( 25 )
 63/shape_one_way = false
-63/shape_one_way_margin = 0.0
-63/shapes = [  ]
+63/shape_one_way_margin = 1.0
+63/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 25 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 63/z_index = 0
 64/name = "SpriteSheet_Decor.png 64"
 64/texture = ExtResource( 4 )
@@ -1014,9 +1180,22 @@ resource_local_to_scene = true
 65/navigation_offset = Vector2( 0, 0 )
 65/shape_offset = Vector2( 0, 0 )
 65/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+65/shape = SubResource( 26 )
 65/shape_one_way = false
-65/shape_one_way_margin = 0.0
-65/shapes = [  ]
+65/shape_one_way_margin = 1.0
+65/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 26 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 27 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 65/z_index = 0
 66/name = "SpriteSheet_Decor.png 66"
 66/texture = ExtResource( 4 )
@@ -1046,3 +1225,31 @@ resource_local_to_scene = true
 67/shape_one_way_margin = 0.0
 67/shapes = [  ]
 67/z_index = 0
+68/name = "SpriteSheet_Decor.png 68"
+68/texture = ExtResource( 4 )
+68/tex_offset = Vector2( 0, 0 )
+68/modulate = Color( 1, 1, 1, 1 )
+68/region = Rect2( 207, 76, 15, 15 )
+68/tile_mode = 0
+68/occluder_offset = Vector2( 0, 0 )
+68/navigation_offset = Vector2( 0, 0 )
+68/shape_offset = Vector2( 0, 0 )
+68/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+68/shape_one_way = false
+68/shape_one_way_margin = 0.0
+68/shapes = [  ]
+68/z_index = 0
+69/name = "SpriteSheet_Decor.png 69"
+69/texture = ExtResource( 4 )
+69/tex_offset = Vector2( 0, 0 )
+69/modulate = Color( 1, 1, 1, 1 )
+69/region = Rect2( 191, 76, 16, 15 )
+69/tile_mode = 0
+69/occluder_offset = Vector2( 0, 0 )
+69/navigation_offset = Vector2( 0, 0 )
+69/shape_offset = Vector2( 0, 0 )
+69/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+69/shape_one_way = false
+69/shape_one_way_margin = 0.0
+69/shapes = [  ]
+69/z_index = 0
