@@ -50,6 +50,7 @@ texture = ExtResource( 13 )
 [node name="Player_Sprite" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0.125, -0.25 )
 animation = "Idle"
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.111362, 9.34992 )
@@ -140,6 +141,7 @@ stream = ExtResource( 22 )
 
 [node name="Level_Win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 25 )
+volume_db = -15.0
 
 [node name="Death_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 26 )

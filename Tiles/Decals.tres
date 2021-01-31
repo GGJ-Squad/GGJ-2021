@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=58 format=2]
+[gd_resource type="TileSet" load_steps=61 format=2]
 
 [ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Mushroom_Bounce.tres" type="Texture" id=1]
 [ext_resource path="res://Sprites/SpriteSheets/WaterDrop/WaterDrop.tres" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Sprites/SpriteSheets/Mushroom_Bounce/Blue_Mushroom_Bounce.tres" type="Texture" id=10]
 [ext_resource path="res://Tiles/Lava/Lava_2.tres" type="Texture" id=11]
 [ext_resource path="res://Tiles/Lava/Lava_1.tres" type="Texture" id=12]
+[ext_resource path="res://Sprites/SpriteSheets/LavaDrop/LavaDrop.tres" type="Texture" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 11.2325, 12.6223, 4.90419, 12.6223, 4.90419, 5.21221, 11.2325, 5.21221 )
@@ -148,8 +149,13 @@ points = PoolVector2Array( 13.2909, 27.5038, 1.45212, 27.5038, 1.45212, 15.665, 
 [sub_resource type="ConvexPolygonShape2D" id=45]
 points = PoolVector2Array( 29.4265, 13.506, 1.0015, 13.506, 1.0015, 0.424072, 29.4265, 0.424072 )
 
+[sub_resource type="ConvexPolygonShape2D" id=46]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=47]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
 [resource]
-resource_local_to_scene = true
 0/name = "SS_CaveNormal.png 0"
 0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
@@ -1610,9 +1616,16 @@ resource_local_to_scene = true
 85/navigation_offset = Vector2( 0, 0 )
 85/shape_offset = Vector2( 0, 0 )
 85/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+85/shape = SubResource( 46 )
 85/shape_one_way = false
-85/shape_one_way_margin = 0.0
-85/shapes = [  ]
+85/shape_one_way_margin = 1.0
+85/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 46 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 85/z_index = 0
 86/name = "Lava_2.tres 86"
 86/texture = ExtResource( 11 )
@@ -1624,7 +1637,28 @@ resource_local_to_scene = true
 86/navigation_offset = Vector2( 0, 0 )
 86/shape_offset = Vector2( 0, 0 )
 86/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+86/shape = SubResource( 47 )
 86/shape_one_way = false
-86/shape_one_way_margin = 0.0
-86/shapes = [  ]
+86/shape_one_way_margin = 1.0
+86/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 47 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 86/z_index = 0
+87/name = "LavaDrop.tres 87"
+87/texture = ExtResource( 13 )
+87/tex_offset = Vector2( 0, 0 )
+87/modulate = Color( 1, 1, 1, 1 )
+87/region = Rect2( 0, -1, 18, 67 )
+87/tile_mode = 0
+87/occluder_offset = Vector2( 0, 0 )
+87/navigation_offset = Vector2( 0, 0 )
+87/shape_offset = Vector2( 0, 0 )
+87/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+87/shape_one_way = false
+87/shape_one_way_margin = 0.0
+87/shapes = [  ]
+87/z_index = 0
