@@ -7,8 +7,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.04858, 6.5611 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14.9954, 15.8804 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 14.1545
 
 [node name="Bear" type="KinematicBody2D" groups=[
 "Enemy",
@@ -51,10 +51,11 @@ __meta__ = {
 }
 
 [node name="RunTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.4
 one_shot = true
 
 [node name="Bear_Sprite" parent="." instance=ExtResource( 3 )]
+frame = 2
 [connection signal="area_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="CollisionShape2D/Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 [connection signal="state_changed" from="Ai" to="." method="_on_Ai_state_changed"]

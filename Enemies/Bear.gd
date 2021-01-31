@@ -33,7 +33,7 @@ onready var target = get_tree().get_nodes_in_group("Players")[0]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Ai/Alert/CollisionShape2D").shape.radius = 64
-	get_node("Ai/Attack Range/CollisionShape2D").shape.radius =26
+	get_node("Ai/Attack Range/CollisionShape2D").shape.radius =15
 	randomize()
 	var random_x = rand_range(-wander_range,wander_range)
 	var random_y = rand_range(-wander_range,wander_range)
@@ -50,7 +50,7 @@ func _process(delta):
 		elif state == "Attack":
 			attack(delta)
 	else:
-		_update_navigation_path(actor.position, (target.global_position - actor.global_position)*-1+actor.global_position)
+		_update_navigation_path(actor.position, (target.global_position - actor.global_position)*-0.5+actor.global_position)
 		
 	
 	if patrol_location_reached == false:
@@ -93,8 +93,6 @@ func alert(delta):
 		state = "Wander"
 
 func attack(delta):
-		target.apply_knockback(actor.position)
-		target.take_damage(damage)
 		$Bear_Sprite.change_state("Attack", moving_left)
 		run = true
 		run_timer.start()
@@ -170,3 +168,5 @@ func _on_RaycastTimer_timeout():
 
 func _on_RunTimer_timeout():
 	run = false
+	target.apply_knockback(actor.position)
+	target.take_damage(damage)
