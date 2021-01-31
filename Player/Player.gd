@@ -58,7 +58,6 @@ func _process(delta):
 	if step_timer <= 0:
 		play_step_sound()
 	
-	$Label.text = str(health)
 	if health < MAX_HEALTH:
 		regen_timer -= delta
 	if regen_timer <= 0:

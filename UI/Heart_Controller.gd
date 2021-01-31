@@ -6,9 +6,6 @@ var cur_health = 16
 func _ready():
 	pass
 	
-func _process(delta):
-	$Label.text = str(cur_health)
-
 func heal(in_heal):
 	$Tween.interpolate_property(get_node("Heart_Overlay"), "modulate", Color(0,1,0,1), Color(0,1,0,0), 0.5, Tween.TRANS_LINEAR)
 	$Tween.start()
